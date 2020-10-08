@@ -1,3 +1,3 @@
 ;; For loading personal configurations
 (defun personal (library)
-  (load (concat "~/.emacs.d/personal/" (symbol-name library)) 'noerror))
+  (load (concat vanilla-personal-dir "/" (symbol-name library)) 'noerror))
