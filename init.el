@@ -26,6 +26,7 @@
 (personal 'which-key)
 (personal 'iedit)
 (personal 'projectile)
+(personal 'init-f2)
 
 ;; elpa managed
 ;; ------------------
