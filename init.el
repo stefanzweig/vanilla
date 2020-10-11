@@ -35,6 +35,7 @@
 (package-initialize)
 (when (not package-archive-contents) (package-refresh-contents))
 
+(package 'use-package)
 (package 'magit)
 (package 'expand-region)
 (package 'key-chord)
