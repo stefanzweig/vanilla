@@ -18,5 +18,13 @@
 (global-unset-key (kbd "<up>"))
 (global-unset-key (kbd "<down>"))
 
+;; org
+(global-set-key (kbd "C-c a") 'org-agenda)
+
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 (global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
 (global-set-key (kbd "C-k") #'crux-smart-kill-line)
+(global-set-key (kbd "M-p") 'previous-buffer)
+(global-set-key (kbd "M-n") 'next-buffer)
