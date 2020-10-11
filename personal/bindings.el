@@ -20,6 +20,8 @@
 
 ;; org
 (global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "<f6>") 'my/yank-more)
+(global-set-key (kbd "<f9> c") 'org-capture)
 
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -28,3 +30,27 @@
 (global-set-key (kbd "C-k") #'crux-smart-kill-line)
 (global-set-key (kbd "M-p") 'previous-buffer)
 (global-set-key (kbd "M-n") 'next-buffer)
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C-s") 'swiper)
+
+;; key-chord
+(key-chord-define-global "jj" 'avy-goto-word-1)
+(key-chord-define-global "jl" 'avy-goto-line)
+(key-chord-define-global "jk" 'avy-goto-char)
+(key-chord-define-global "uu" 'undo-tree-visualize)
+(key-chord-define-global "xx" 'execute-extended-command)
+(key-chord-define-global "yy" 'browse-kill-ring)
+
+;; helm
+(global-set-key (kbd "C-c h") 'helm-command-prefix)
+(global-unset-key (kbd "C-x c"))
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-m") 'helm-M-x)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-h f") 'helm-apropos)
+(global-set-key (kbd "C-h r") 'helm-info-emacs)
+(global-set-key (kbd "C-h C-l") 'helm-locate-library)
+(global-set-key (kbd "C-c f") 'helm-recentf)

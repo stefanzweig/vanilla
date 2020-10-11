@@ -9,6 +9,9 @@
 ;; This directory is for your vendor configuration.
 (defvar vanilla-vendor-dir (expand-file-name "vendor" vanilla-dir))
 
+;; This directory is for your backups configuration.
+(defvar vanilla-backups-dir (expand-file-name "backups" vanilla-dir))
+
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" vanilla-personal-dir))
 (load custom-file 'noerror)
@@ -33,14 +36,24 @@
 (when (not package-archive-contents) (package-refresh-contents))
 
 (package 'magit)
+(package 'expand-region)
+(package 'key-chord)
+(package 'avy)
+(package 'company)
+(package 'helm)
+(package 'helm-projectile)
+(package 'ivy)
+(package 'swiper)
+(package 'counsel)
+(package 'smartparens)
+
+;; submodule managed
+;; ------------------
+(add-to-list 'load-path (concat vanilla-vendor-dir "/"))
 
 ;; main settings
 (personal 'global)
 (personal 'fonts)
 (personal 'org)
+(personal 'vanilla-company)
 (personal 'bindings)
-
-;; submodule managed
-;; ------------------
-(add-to-list 'load-path (concat vanilla-vendor-dir "/"))
-(message (concat vanilla-vendor-dir "/"))

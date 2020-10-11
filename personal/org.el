@@ -48,3 +48,9 @@
 
 ;; Hide leading stars
 (setq org-hide-leading-stars t)
+
+(defun my/yank-more ()
+  (interactive)
+  (insert "[[")
+  (yank)
+  (insert "][more]]"))

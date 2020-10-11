@@ -58,3 +58,17 @@
 
 ;; org mode settings.
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+;; key-chord-mode
+(key-chord-mode +1)
+
+;; company-mode
+(global-company-mode 1)
+
+;; ivy-mode
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+
+;; smartparens
+(smartparens-mode +1)
