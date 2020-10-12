@@ -19,7 +19,7 @@
 (setq def-init-file (expand-file-name "defuns.el" vanilla-personal-dir))
 (load def-init-file 'noerror)
 
-;; plugins 
+;; plugins
 (personal 'crux)
 (personal 'org-bullets)
 (personal 'infrastructure)
@@ -31,8 +31,8 @@
 ;; elpa managed
 ;; ------------------
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("org"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+			 ("org"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+			 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
 (when (not package-archive-contents) (package-refresh-contents))
 

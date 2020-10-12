@@ -1,6 +1,10 @@
 ;; Don't show the startup screen
 (setq inhibit-startup-message t)
 
+;; toolbar and menu disabled
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
 ;; "y or n" instead of "yes or no"
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -39,6 +43,9 @@
 ;; Gotta see matching parens
 (show-paren-mode t)
 
+;; linum mode
+(global-linum-mode 1)
+
 ;; Don't truncate lines
 (setq truncate-lines t)
 (setq truncate-partial-width-windows nil)
@@ -47,8 +54,8 @@
 (defvar whitespace-cleanup-on-save t)
 ;; (setq whitespace-cleanup-on-save nil)
 (add-hook 'before-save-hook
-          (lambda ()
-            (if whitespace-cleanup-on-save (whitespace-cleanup))))
+	  (lambda ()
+	    (if whitespace-cleanup-on-save (whitespace-cleanup))))
 
 ;; Trash can support
 (setq delete-by-moving-to-trash t)
