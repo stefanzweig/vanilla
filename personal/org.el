@@ -38,8 +38,10 @@
 
 (setq org-capture-templates
       '(("t" "todo" entry (file "~/Documents/2020/newgtd.org")
-	       "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-      ("j" "Journal" entry (file+datetree "~/Documents/2020/journal.org")
+	 "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+	("T" "Quick task" entry (file "~/Documents/2020/newgtd.org")
+	 "* TODO %^{Task}\n" :immediate-finish t)
+	("j" "Journal" entry (file+datetree "~/Documents/2020/journal.org")
 	 "** %^{Heading}")))
 
 ;; org mode agenda customized commands
