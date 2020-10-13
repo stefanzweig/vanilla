@@ -2,7 +2,7 @@
 (setq inhibit-startup-message t)
 
 ;; toolbar and menu disabled
-(menu-bar-mode -1)
+;; (menu-bar-mode -1)
 (tool-bar-mode -1)
 
 ;; "y or n" instead of "yes or no"
