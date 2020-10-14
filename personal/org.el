@@ -16,6 +16,8 @@
 (setq org-log-into-drawer "LOGBOOK")
 (setq org-clock-into-drawer 1)
 
+(setq org-plantuml-jar-path (concat vanilla-personal-dir "/" "plantuml.jar"))
+(add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
 (require 'ob)
 (require 'ob-shell)
 (require 'ob-python)
@@ -25,7 +27,7 @@
 
 (setq org-confirm-babel-evaluate nil)
 (org-babel-do-load-languages
- 'org-babel-load-language   '((python . t)
+ 'org-babel-load-languages   '((python . t)
 			      (emacs-lisp . t)
 			      (shell . t)
 			      (dot . t)
