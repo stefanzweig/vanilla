@@ -30,8 +30,10 @@
  'org-babel-load-languages   '((python . t)
 			      (emacs-lisp . t)
 			      (shell . t)
-			      (dot . t)
 			      (java . t)
+			      (C . t)
+			      (calc . t)
+			      (ditaa . t)
 			      (plantuml . t)))
 (defun org-babel-execute:yaml (body params) body)
 
