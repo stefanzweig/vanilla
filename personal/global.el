@@ -79,3 +79,6 @@
 
 ;; smartparens
 (smartparens-mode +1)
+
+;; theme
+(load-theme 'misterioso)

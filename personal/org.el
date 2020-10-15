@@ -16,6 +16,8 @@
 (setq org-log-into-drawer "LOGBOOK")
 (setq org-clock-into-drawer 1)
 
+(setq org-ditaa-jar-path (concat vanilla-personal-dir "/" "ditaa.jar"))
+
 (setq org-plantuml-jar-path (concat vanilla-personal-dir "/" "plantuml.jar"))
 (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
 (require 'ob)
