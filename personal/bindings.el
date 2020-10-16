@@ -54,3 +54,7 @@
 (global-set-key (kbd "C-h r") 'helm-info-emacs)
 (global-set-key (kbd "C-h C-l") 'helm-locate-library)
 (global-set-key (kbd "C-c f") 'helm-recentf)
+(global-set-key (kbd "C-c f") 'helm-recentf)
+
+;; shell related
+(global-set-key (kbd "C-!") 'shell)
