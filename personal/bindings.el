@@ -1,4 +1,4 @@
-;; 
+;;
 (global-set-key (kbd "M-3") 'split-window-horizontally) ; was digit-argument
 (global-set-key (kbd "M-2") 'split-window-vertically) ; was digit-argument
 (global-set-key (kbd "M-1") 'delete-other-windows) ; was digit-argument
@@ -13,10 +13,10 @@
 (global-unset-key (kbd "C-x o")) ; was other-window
 
 ;; Help teach to unlearn the arrow keys
-(global-unset-key (kbd "<left>"))
-(global-unset-key (kbd "<right>"))
-(global-unset-key (kbd "<up>"))
-(global-unset-key (kbd "<down>"))
+;; (global-unset-key (kbd "<left>"))
+;; (global-unset-key (kbd "<right>"))
+;; (global-unset-key (kbd "<up>"))
+;; (global-unset-key (kbd "<down>"))
 
 ;; org
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -37,9 +37,7 @@
 (key-chord-define-global "jj" 'avy-goto-word-1)
 (key-chord-define-global "jl" 'avy-goto-line)
 (key-chord-define-global "jk" 'avy-goto-char)
-(key-chord-define-global "uu" 'undo-tree-visualize)
 (key-chord-define-global "xx" 'execute-extended-command)
-(key-chord-define-global "yy" 'browse-kill-ring)
 
 ;; helm
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
