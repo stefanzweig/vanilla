@@ -48,6 +48,7 @@
 (package 'swiper)
 (package 'counsel)
 (package 'smartparens)
+(package 'paredit)
 
 ;; submodule managed
 ;; ------------------
