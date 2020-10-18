@@ -51,7 +51,7 @@
 (package 'paredit)
 (package 'demo-it)
 (package 'yasnippet)
-
+(package 'powerline)
 ;; submodule managed
 ;; ------------------
 (add-to-list 'load-path (concat vanilla-vendor-dir "/"))

@@ -89,3 +89,5 @@
 (load-theme 'misterioso)
 
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+
+(powerline-default-theme)
