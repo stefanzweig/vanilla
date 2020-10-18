@@ -85,6 +85,7 @@
   "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
 
-
 ;; theme
 (load-theme 'misterioso)
+
+(add-hook 'prog-mode-hook #'yas-minor-mode)

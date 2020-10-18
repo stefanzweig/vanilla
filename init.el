@@ -49,6 +49,8 @@
 (package 'counsel)
 (package 'smartparens)
 (package 'paredit)
+(package 'demo-it)
+(package 'yasnippet)
 
 ;; submodule managed
 ;; ------------------
