@@ -63,4 +63,5 @@
 (personal 'fonts)
 (personal 'org)
 (personal 'vanilla-company)
+(personal 'vanilla-utils)
 (personal 'bindings)
