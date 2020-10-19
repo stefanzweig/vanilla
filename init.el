@@ -52,6 +52,8 @@
 (package 'demo-it)
 (package 'yasnippet)
 (package 'powerline)
+(package 'exec-path-from-shell)
+
 ;; submodule managed
 ;; ------------------
 (add-to-list 'load-path (concat vanilla-vendor-dir "/"))

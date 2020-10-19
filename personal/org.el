@@ -35,6 +35,7 @@
 			      (java . t)
 			      (C . t)
 			      (calc . t)
+			      (dot . t)
 			      (ditaa . t)
 			      (plantuml . t)))
 (defun org-babel-execute:yaml (body params) body)
