@@ -72,3 +72,20 @@
   (insert "[[")
   (yank)
   (insert "][more]]"))
+
+
+(eval-after-load 'org-list
+  '(add-hook 'org-checkbox-statistics-hook (function my/checkbox-list-complete)))
+
+(defun my/checkbox-list-complete ()
+  (save-excursion
+    (org-back-to-heading t)
+    (when (re-search-forward "\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]"
+			     (line-end-position) t)
+      (org-todo (if (if (match-end 1)
+			(equal (match-string 1) "100%")
+		      (and (> (match-end 2) (match-beginning 2))
+			   (equal (match-string 2) (match-string 3))))
+		    ;; All done - do the state change.
+		    'done
+		  'todo)))))
