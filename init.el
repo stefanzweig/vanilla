@@ -53,6 +53,7 @@
 (package 'yasnippet)
 (package 'powerline)
 (package 'exec-path-from-shell)
+(package 'highlight-parentheses)
 
 ;; submodule managed
 ;; ------------------

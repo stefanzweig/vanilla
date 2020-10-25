@@ -84,13 +84,13 @@
   "paredit"
   "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook #'highlight-parentheses-mode)
 
 ;; theme
 (load-theme 'misterioso)
 
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'org-mode-hook #'yas-minor-mode)
-
 
 (powerline-default-theme)
 
