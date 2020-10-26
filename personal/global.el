@@ -95,3 +95,5 @@
 (powerline-default-theme)
 
 (exec-path-from-shell-initialize)
+
+(global-undo-tree-mode)

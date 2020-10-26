@@ -55,6 +55,7 @@
 (package 'exec-path-from-shell)
 (package 'highlight-parentheses)
 (package 'markdown-mode)
+(package 'undo-tree)
 
 ;; submodule managed
 ;; ------------------
