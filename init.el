@@ -54,6 +54,7 @@
 (package 'powerline)
 (package 'exec-path-from-shell)
 (package 'highlight-parentheses)
+(package 'markdown-mode)
 
 ;; submodule managed
 ;; ------------------
