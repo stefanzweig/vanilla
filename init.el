@@ -56,6 +56,7 @@
 (package 'highlight-parentheses)
 (package 'markdown-mode)
 (package 'undo-tree)
+(package 'diminish)
 
 ;; submodule managed
 ;; ------------------

@@ -97,3 +97,5 @@
 (exec-path-from-shell-initialize)
 
 (global-undo-tree-mode)
+
+(diminish 'undo-tree-mode " ☺")
