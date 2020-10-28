@@ -57,6 +57,7 @@
 (package 'markdown-mode)
 (package 'undo-tree)
 (package 'diminish)
+(package 'solarized-theme)
 
 ;; submodule managed
 ;; ------------------

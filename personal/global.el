@@ -87,7 +87,8 @@
 (add-hook 'emacs-lisp-mode-hook #'highlight-parentheses-mode)
 
 ;; theme
-(load-theme 'misterioso)
+;; (load-theme 'misterioso)
+(load-theme 'solarized-light t)
 
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'org-mode-hook #'yas-minor-mode)
