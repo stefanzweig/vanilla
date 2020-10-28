@@ -27,6 +27,7 @@
 (personal 'iedit)
 (personal 'projectile)
 (personal 'init-f2)
+(personal 'burly)
 
 ;; elpa managed
 ;; ------------------
