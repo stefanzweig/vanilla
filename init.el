@@ -59,6 +59,7 @@
 (package 'undo-tree)
 (package 'diminish)
 (package 'solarized-theme)
+(package 'simple-httpd)
 
 ;; submodule managed
 ;; ------------------
