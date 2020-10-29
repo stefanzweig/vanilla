@@ -56,3 +56,7 @@
 
 ;; shell related
 (global-set-key (kbd "C-!") 'shell)
+
+;; xah cut/copy
+(global-set-key (kbd "<f7>") 'xah-cut-line-or-region) ; cut
+(global-set-key (kbd "<f8>") 'xah-copy-line-or-region) ; copy
