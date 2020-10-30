@@ -20,8 +20,9 @@
 
 ;; org
 (global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "<f6>") 'my/yank-more)
+(global-set-key (kbd "<f9> a") 'org-agenda)
 (global-set-key (kbd "<f9> c") 'org-capture)
+(global-set-key (kbd "<f9> m") 'my/yank-more)
 
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -38,6 +39,7 @@
 (key-chord-define-global "jl" 'avy-goto-line)
 (key-chord-define-global "jk" 'avy-goto-char)
 (key-chord-define-global "xx" 'execute-extended-command)
+(key-chord-define-global "yy" 'xah-copy-line-or-region)
 
 ;; helm
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
