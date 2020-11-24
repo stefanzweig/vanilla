@@ -57,7 +57,15 @@
 	 ((agenda "" ((org-agenda-ndays 1)
 		      (org-agenda-sorting-strategy
 		       (quote ((agenda time-up priority-down tag-up))))
-		      (org-deadline-warning-days 0)))))))
+		      (org-deadline-warning-days 0)))))
+	("P" "By priority"
+	 ((tags-todo "+PRIORITY=\"A\"")
+	  (tags-todo "+PRIORITY=\"B\"")
+	  (tags-todo "+PRIORITY=\"\"")
+	  (tags-todo "+PRIORITY=\"C\""))
+	 ((org-agenda-prefix-format "%-10c %-10T %e ")
+	  (org-agenda-sorting-strategy '(priority-down tag-up category-keep effort-down))))
+	))
 
 
 (setq org-todo-keywords
