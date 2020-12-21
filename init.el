@@ -68,6 +68,7 @@
 ;; main settings
 (personal 'global)
 (personal 'fonts)
+(personal 'org-brain)
 (personal 'org)
 (personal 'vanilla-company)
 (personal 'vanilla-utils)

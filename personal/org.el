@@ -97,3 +97,11 @@
 		    ;; All done - do the state change.
 		    'done
 		  'todo)))))
+
+
+(setq org-id-track-globally t)
+(setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+(add-hook 'before-save-hook #'org-brain-ensure-ids-in-buffer)
+(push '("b" "Brain" plain (function org-brain-goto-end)
+	"* %i%?" :empty-lines 1)
+      org-capture-templates)
