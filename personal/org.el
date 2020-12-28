@@ -40,7 +40,7 @@
 			      (plantuml . t)))
 (defun org-babel-execute:yaml (body params) body)
 
-(setq org-agenda-files (quote ("~/Documents/2020")))
+(setq org-agenda-files (quote ("~/Documents/2020" "~/Documents/2021")))
 (setq org-default-notes-file "~/Documents/2020/notes.org")
 
 (setq org-capture-templates
