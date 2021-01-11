@@ -73,3 +73,4 @@
 (personal 'vanilla-company)
 (personal 'vanilla-utils)
 (personal 'bindings)
+(+my/better-font)

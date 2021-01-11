@@ -14,7 +14,7 @@
 (pending-delete-mode t)
 
 ;; Display line and column numbers
-(setq line-number-mode    t)
+;; (setq line-number-mode    t)
 (setq column-number-mode  t)
 
 ;; Modeline info
@@ -44,7 +44,7 @@
 (show-paren-mode t)
 
 ;; linum mode
-(global-linum-mode 1)
+;; (global-linum-mode 1)
 
 ;; Don't truncate lines
 (setq truncate-lines t)
