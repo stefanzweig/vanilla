@@ -27,7 +27,7 @@
 (personal 'iedit)
 (personal 'projectile)
 (personal 'init-f2)
-(personal 'burly)
+;; (personal 'burly)
 
 ;; elpa managed
 ;; ------------------
@@ -56,10 +56,11 @@
 (package 'exec-path-from-shell)
 (package 'highlight-parentheses)
 (package 'markdown-mode)
-(package 'undo-tree)
+;; (package 'undo-tree)
 (package 'diminish)
 (package 'solarized-theme)
-(package 'simple-httpd)
+(package 'ivy-posframe)
+;; (package 'simple-httpd)
 
 ;; submodule managed
 ;; ------------------
@@ -68,9 +69,10 @@
 ;; main settings
 (personal 'global)
 (personal 'fonts)
-(personal 'org-brain)
+;; (personal 'org-brain)
 (personal 'org)
 (personal 'vanilla-company)
 (personal 'vanilla-utils)
 (personal 'bindings)
-(+my/better-font)
+;; (+my/better-font)
+
