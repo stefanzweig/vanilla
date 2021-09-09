@@ -95,8 +95,17 @@
 
 (powerline-default-theme)
 
-(exec-path-from-shell-initialize)
+;; (exec-path-from-shell-initialize)
 
-(global-undo-tree-mode)
+;; (global-undo-tree-mode)
 
-(diminish 'undo-tree-mode " ☺")
+;; (diminish 'undo-tree-mode " ☺")
+
+;; display at `ivy-posframe-style'
+;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-center)))
+;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-bottom-left)))
+;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-bottom-left)))
+;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center)))
+(ivy-posframe-mode 1)
