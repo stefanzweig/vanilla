@@ -61,3 +61,9 @@
 ;; xah cut/copy
 (global-set-key (kbd "<f7>") 'xah-cut-line-or-region) ; cut
 (global-set-key (kbd "<f8>") 'xah-copy-line-or-region) ; copy
+
+(when (bound-and-true-p hydra-verbatim)
+  (defhydra hydra-zoom (global-map "<f6>")
+    "zoom"
+    ("g" text-scale-increase "in")
+    ("l" text-scale-decrease "out")))

@@ -60,6 +60,7 @@
 (package 'diminish)
 (package 'solarized-theme)
 (package 'ivy-posframe)
+(package 'hydra)
 ;; (package 'simple-httpd)
 
 ;; submodule managed
@@ -76,3 +77,4 @@
 (personal 'bindings)
 ;; (+my/better-font)
 
+(put 'narrow-to-region 'disabled nil)
