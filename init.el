@@ -61,6 +61,7 @@
 (package 'solarized-theme)
 (package 'ivy-posframe)
 (package 'hydra)
+(package 'dashboard)
 ;; (package 'simple-httpd)
 
 ;; submodule managed
@@ -75,6 +76,7 @@
 (personal 'vanilla-company)
 (personal 'vanilla-utils)
 (personal 'bindings)
+(personal 'dashboard)
 ;; (+my/better-font)
 
 (put 'narrow-to-region 'disabled nil)
