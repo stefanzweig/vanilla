@@ -17,6 +17,5 @@
   (dashboard-set-file-icons t)
   (dashboard-set-init-info t)
   (dashboard-set-navigator t)
-  (dashboard-items '((recents   . 10)
-                     (projects  . 5)
-                     (bookmarks . 5))))
+  (dashboard-items '((bookmarks . 5)
+                     (recents   . 10))))

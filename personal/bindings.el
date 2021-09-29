@@ -40,6 +40,7 @@
 (key-chord-define-global "jk" 'avy-goto-char)
 (key-chord-define-global "xx" 'execute-extended-command)
 (key-chord-define-global "yy" 'xah-copy-line-or-region)
+(key-chord-define-global "dd" 'xah-cut-line-or-region)
 
 ;; helm
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
@@ -59,8 +60,8 @@
 (global-set-key (kbd "C-!") 'shell)
 
 ;; xah cut/copy
-(global-set-key (kbd "<f7>") 'xah-cut-line-or-region) ; cut
-(global-set-key (kbd "<f8>") 'xah-copy-line-or-region) ; copy
+;; (global-set-key (kbd "<f7>") 'xah-cut-line-or-region) ; cut
+;; (global-set-key (kbd "<f8>") 'xah-copy-line-or-region) ; copy
 
 (when (bound-and-true-p hydra-verbatim)
   (defhydra hydra-zoom (global-map "C-t")
