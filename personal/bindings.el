@@ -11,6 +11,7 @@
 (global-unset-key (kbd "C-x 1")) ; was delete-other-windows
 (global-unset-key (kbd "C-x 0")) ; was delete-window
 (global-unset-key (kbd "C-x o")) ; was other-window
+(global-unset-key (kbd "<f11>")) ; was fullscreen
 
 ;; Help teach to unlearn the arrow keys
 ;; (global-unset-key (kbd "<left>"))
@@ -68,3 +69,5 @@
     "zoom"
     ("+" text-scale-increase "in")
     ("-" text-scale-decrease "out")))
+
+(global-set-key (kbd "<f5> g") 'counsel-git-grep)
