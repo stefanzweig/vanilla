@@ -43,7 +43,6 @@
     (if (display-graphic-p)
 	(+my/better-font))))
 
-
 (defun org-todo-list-current-file (&optional arg)
   "Like `org-todo-list', but using only the current buffer's file."
   (interactive "P")
@@ -51,3 +50,14 @@
     (if (null (car org-agenda-files))
 	(error "%s is not visiting a file" (buffer-name (current-buffer)))
       (org-todo-list arg))))
+
+ (defun prelude-copy-file-name-to-clipboard ()
+   "Copy the current buffer file name to the clipboard."
+   (interactive)
+   (let ((filename (if (equal major-mode 'dired-mode)
+		       default-directory
+		     (buffer-file-name))))
+     (when filename
+       (kill-new filename)
+       (message "Copied buffer file name '%s' to the clipboard." filename))))
+
