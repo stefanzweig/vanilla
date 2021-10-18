@@ -65,8 +65,13 @@
 ;; (global-set-key (kbd "<f8>") 'xah-copy-line-or-region) ; copy
 
 (when (bound-and-true-p hydra-verbatim)
-  (defhydra hydra-zoom (global-map "C-t")
-    "zoom"
+  (defhydra hydra-utils (global-map "C-t")
+    "hydra"
+    ("l" forward-char)
+    ("h" backward-char)
+    ("j" next-line)
+    ("k" previous-line)
+    ("q" nil "quit")
     ("+" text-scale-increase "in")
     ("-" text-scale-decrease "out")))
 

@@ -1,5 +1,6 @@
 (message "Vanilla is powering up... Be patient, Master!")
 
+
 ;; Define Vanilla's directory structure
 (defvar vanilla-dir (file-name-directory load-file-name))
 
@@ -50,12 +51,12 @@
 (package 'counsel)
 (package 'smartparens)
 (package 'paredit)
-(package 'demo-it)
+;; (package 'demo-it)
 (package 'yasnippet)
 (package 'powerline)
 (package 'exec-path-from-shell)
 (package 'highlight-parentheses)
-(package 'markdown-mode)
+;; (package 'markdown-mode)
 ;; (package 'undo-tree)
 (package 'diminish)
 ;; (package 'solarized-theme)
