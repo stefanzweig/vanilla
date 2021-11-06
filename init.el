@@ -38,7 +38,7 @@
 (package-initialize)
 (when (not package-archive-contents) (package-refresh-contents))
 
-(package 'use-package)
+;; (package 'use-package)
 (package 'magit)
 (package 'expand-region)
 (package 'key-chord)
@@ -62,7 +62,7 @@
 ;; (package 'solarized-theme)
 ;; (package 'ivy-posframe)
 (package 'hydra)
-(package 'dashboard)
+;; (package 'dashboard)
 ;; (package 'simple-httpd)
 
 ;; submodule managed
@@ -77,7 +77,7 @@
 (personal 'vanilla-company)
 (personal 'vanilla-utils)
 (personal 'bindings)
-(personal 'dashboard)
+;; (personal 'dashboard)
 ;; (+my/better-font)
 
 (put 'narrow-to-region 'disabled nil)
