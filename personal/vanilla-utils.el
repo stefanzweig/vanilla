@@ -140,3 +140,20 @@ Version 2020-06-04"
 		      (format "%x" (+ 8 (random 4)))
 		      (substring myStr 17 20)
 		      (substring myStr 20 32)))))))
+
+
+(defun xah-select-block ()
+  "Select the current/next block of text between blank lines.
+If region is active, extend selection downward by block.
+
+URL `http://xahlee.info/emacs/emacs/modernization_mark-word.html'
+Version 2019-12-26"
+  (interactive)
+  (if (region-active-p)
+      (re-search-forward "\n[ \t]*\n" nil "move")
+    (progn
+      (skip-chars-forward " \n\t")
+      (when (re-search-backward "\n[ \t]*\n" nil "move")
+	(re-search-forward "\n[ \t]*\n"))
+      (push-mark (point) t t)
+      (re-search-forward "\n[ \t]*\n" nil "move"))))

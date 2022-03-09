@@ -76,3 +76,4 @@
     ("q" nil "quit")))
 
 (global-set-key (kbd "<f5> g") 'counsel-git-grep)
+(global-set-key (kbd "<f6>") 'xah-select-block)
