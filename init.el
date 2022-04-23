@@ -82,3 +82,4 @@
 ;; (+my/better-font)
 
 (put 'narrow-to-region 'disabled nil)
+(setq org-babel-python-command "python3")
