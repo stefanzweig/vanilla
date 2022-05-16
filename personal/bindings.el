@@ -77,3 +77,4 @@
 
 (global-set-key (kbd "<f5> g") 'counsel-git-grep)
 (global-set-key (kbd "<f6>") 'xah-select-block)
+(global-set-key (kbd "<f8>") 'xah-search-current-word)
