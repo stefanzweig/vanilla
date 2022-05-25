@@ -22,7 +22,7 @@
 ;; (display-battery-mode 1)
 
 ;; Small fringes
-(set-fringe-mode '(1 . 1))
+;; (set-fringe-mode '(1 . 1))
 
 ;; Emacs gurus don't need no stinking scroll bars
 (when (fboundp 'toggle-scroll-bar)
@@ -94,7 +94,7 @@
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'org-mode-hook #'yas-minor-mode)
 
-(powerline-default-theme)
+;; (powerline-default-theme)
 
 ;; (exec-path-from-shell-initialize)
 
