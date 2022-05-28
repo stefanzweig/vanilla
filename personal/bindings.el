@@ -76,6 +76,7 @@
     ("q" nil "quit")))
 
 (global-set-key (kbd "<f5> g") 'counsel-git-grep)
+(global-set-key (kbd "<f5> o") 'xah-open-file-at-cursor)
 (global-set-key (kbd "<f6>") 'xah-select-block)
 (global-set-key (kbd "<f7>") 'zweig/default_orgmode_playground)
 (global-set-key (kbd "<f8>") 'xah-search-current-word)
