@@ -1,6 +1,5 @@
 (message "Vanilla is powering up... Be patient, Master!")
 
-
 ;; Define Vanilla's directory structure
 (defvar vanilla-dir (file-name-directory load-file-name))
 
@@ -83,3 +82,5 @@
 
 (put 'narrow-to-region 'disabled nil)
 (setq org-babel-python-command "python3")
+;; (setq initial-major-mode (quote text-mode))
+(setq initial-buffer-choice 'xah-new-empty-buffer)

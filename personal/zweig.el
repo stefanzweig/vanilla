@@ -33,5 +33,27 @@ If FRAME is omitted or nil, use currently selected frame."
   (python-mode)
   )
 
+(defun xah-new-empty-buffer ()
+  "Create a new empty buffer.
+New buffer will be named “untitled” or “untitled<2>”, “untitled<3>”, etc.
+
+It returns the buffer (for elisp programing).
+
+URL `http://xahlee.info/emacs/emacs/emacs_new_empty_buffer.html'
+Version 2017-11-01"
+  (interactive)
+  (let (($buf (generate-new-buffer "untitled")))
+    (switch-to-buffer $buf)
+    (funcall initial-major-mode)
+    (setq buffer-offer-save t)
+    $buf
+    ))
+
+(defun zweig/default_orgmode_playground ()
+  (interactive)
+  (crux-create-scratch-buffer)
+  (org-mode)
+  )
+
 (provide 'zweig)
 ;;; zweig.el ends here
