@@ -26,5 +26,12 @@ If FRAME is omitted or nil, use currently selected frame."
 (add-hook 'after-init-hook #'my/frame-recenter)
 (add-hook 'after-make-frame-functions #'my/frame-recenter)
 
+
+(defun zweig/python_playground ()
+  (interactive)
+  (crux-create-scratch-buffer)
+  (python-mode)
+  )
+
 (provide 'zweig)
 ;;; zweig.el ends here
