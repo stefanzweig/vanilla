@@ -12,6 +12,7 @@
 (global-unset-key (kbd "C-x 0")) ; was delete-window
 (global-unset-key (kbd "C-x o")) ; was other-window
 (global-unset-key (kbd "<f11>")) ; was fullscreen
+(global-unset-key (kbd "C-SPC")) ; was mark
 
 ;; Help teach to unlearn the arrow keys
 ;; (global-unset-key (kbd "<left>"))
