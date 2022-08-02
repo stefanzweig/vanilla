@@ -81,3 +81,7 @@
 (global-set-key (kbd "<f6>") 'xah-select-block)
 (global-set-key (kbd "<f7>") 'zweig/default_orgmode_playground)
 (global-set-key (kbd "<f8>") 'xah-search-current-word)
+(global-set-key (kbd "M-[") 'insert-pair)
+(global-set-key (kbd "M-{") 'insert-pair)
+(global-set-key (kbd "M-\"") 'insert-pair)
+(global-set-key (kbd "M-)") 'delete-pair)
