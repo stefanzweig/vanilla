@@ -112,3 +112,4 @@
 ;; (ivy-posframe-mode 1)
 
 (setq hydra-verbatim t)
+(set-frame-width (selected-frame) 120)
