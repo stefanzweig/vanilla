@@ -33,7 +33,7 @@
 (global-set-key (kbd "C-k") #'crux-smart-kill-line)
 (global-set-key (kbd "M-p") 'previous-buffer)
 (global-set-key (kbd "M-n") 'next-buffer)
-(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "M-=") 'er/expand-region)
 (global-set-key (kbd "C-s") 'swiper)
 
 ;; key-chord
@@ -43,6 +43,8 @@
 (key-chord-define-global "xx" 'execute-extended-command)
 (key-chord-define-global "yy" 'xah-copy-line-or-region)
 (key-chord-define-global "dd" 'xah-cut-line-or-region)
+(key-chord-define-global "ss" 'swiper-thing-at-point)
+(key-chord-define-global "gg" 'counsel-git-grep)
 
 ;; helm
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
