@@ -76,9 +76,11 @@
     ("h" backward-char "back")
     ("+" text-scale-increase "in" :column "Zoom")
     ("-" text-scale-decrease "out" :column "Zoom")
-    ("q" nil "quit")))
+    ("g" counsel-git-grep "grep" :column "Utils")
+    ("q" nil "quit" :column "Opts")))
 
 (global-set-key (kbd "<f5> g") 'counsel-git-grep)
+(global-set-key (kbd "<f5> f") 'projectile-find-file)
 (global-set-key (kbd "<f5> o") 'xah-open-file-at-cursor)
 (global-set-key (kbd "<f6>") 'xah-select-block)
 (global-set-key (kbd "<f7>") 'zweig/default_orgmode_playground)
