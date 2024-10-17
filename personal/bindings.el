@@ -35,12 +35,14 @@
 (global-set-key (kbd "M-n") 'next-buffer)
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-s") 'swiper)
+; (global-set-key (kbd "C-,") 'set-mark-command)
+(global-set-key (kbd "C-,") #'crux-duplicate-current-line-or-region)
 
 ;; key-chord
 ;; (key-chord-define-global "jj" 'avy-goto-word-1)
 ;; (key-chord-define-global "jl" 'avy-goto-line)
 ;; (key-chord-define-global "jk" 'avy-goto-char)
-(key-chord-define-global "xx" 'execute-extended-command)
+(key-chord-define-global "kk" 'execute-extended-command)
 (key-chord-define-global "yy" 'xah-copy-line-or-region)
 (key-chord-define-global "dd" 'xah-cut-line-or-region)
 
@@ -80,7 +82,12 @@
 (global-set-key (kbd "<f5> o") 'xah-open-file-at-cursor)
 (global-set-key (kbd "<f6>") 'xah-select-block)
 (global-set-key (kbd "<f7>") 'zweig/default_orgmode_playground)
-(global-set-key (kbd "<f8>") 'xah-search-current-word)
+(global-set-key (kbd "<f8> <f8>") 'xah-search-current-word)
+
+(global-set-key (kbd "<f8> (") 'xah-insert-paren)
+(global-set-key (kbd "<f8> {") 'xah-insert-brace)
+(global-set-key (kbd "<f8> [") 'xah-insert-square-bracket)
+
 (global-set-key (kbd "M-[") 'insert-pair)
 (global-set-key (kbd "M-{") 'insert-pair)
 (global-set-key (kbd "M-\"") 'insert-pair)

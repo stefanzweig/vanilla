@@ -87,9 +87,9 @@
 (add-hook 'emacs-lisp-mode-hook #'highlight-parentheses-mode)
 
 ;; theme
-;; (load-theme 'misterioso)
+(load-theme 'misterioso)
 ;; (load-theme 'solarized-light t)
-(set-background-color "honeydew")
+;; (set-background-color "honeydew")
 
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'org-mode-hook #'yas-minor-mode)
@@ -112,3 +112,6 @@
 ;; (ivy-posframe-mode 1)
 
 (setq hydra-verbatim t)
+(set-frame-width (selected-frame) 140)
+(set-frame-height (selected-frame) 34)
+(my/frame-recenter)
