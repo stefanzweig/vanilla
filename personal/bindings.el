@@ -33,7 +33,7 @@
 (global-set-key (kbd "C-k") #'crux-smart-kill-line)
 (global-set-key (kbd "M-p") 'previous-buffer)
 (global-set-key (kbd "M-n") 'next-buffer)
-(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "M-=") 'er/expand-region)
 (global-set-key (kbd "C-s") 'swiper)
 ; (global-set-key (kbd "C-,") 'set-mark-command)
 (global-set-key (kbd "C-,") #'crux-duplicate-current-line-or-region)
@@ -45,6 +45,8 @@
 (key-chord-define-global "kk" 'execute-extended-command)
 (key-chord-define-global "yy" 'xah-copy-line-or-region)
 (key-chord-define-global "dd" 'xah-cut-line-or-region)
+(key-chord-define-global "ss" 'swiper-thing-at-point)
+(key-chord-define-global "gg" 'counsel-git-grep)
 
 ;; helm
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
@@ -76,9 +78,11 @@
     ("h" backward-char "back")
     ("+" text-scale-increase "in" :column "Zoom")
     ("-" text-scale-decrease "out" :column "Zoom")
-    ("q" nil "quit")))
+    ("g" counsel-git-grep "grep" :column "Utils")
+    ("q" nil "quit" :column "Opts")))
 
 (global-set-key (kbd "<f5> g") 'counsel-git-grep)
+(global-set-key (kbd "<f5> f") 'projectile-find-file)
 (global-set-key (kbd "<f5> o") 'xah-open-file-at-cursor)
 (global-set-key (kbd "<f6>") 'xah-select-block)
 (global-set-key (kbd "<f7>") 'zweig/default_orgmode_playground)

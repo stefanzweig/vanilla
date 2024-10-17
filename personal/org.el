@@ -40,15 +40,15 @@
 			      (plantuml . t)))
 (defun org-babel-execute:yaml (body params) body)
 
-(setq org-agenda-files (quote ("z:\\DOCS\\2023")))
-(setq org-default-notes-file "z:\\DOCS\\2023\\notes.org")
+(setq org-agenda-files (quote ("~/Documents/2023" "~/Documents/2021")))
+(setq org-default-notes-file "~/Documents/2023/notes.org")
 
 (setq org-capture-templates
-      '(("t" "todo" entry (file "z:\\DOCS\\2023\\newgtd.org")
+      '(("t" "todo" entry (file "~/Documents/2023/newgtd.org")
 	 "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-	("T" "Quick task" entry (file "z:\\DOCS\\2023\\newgtd.org")
+	("T" "Quick task" entry (file "~/Documents/2023/newgtd.org")
 	 "* TODO %^{Task}\n" :immediate-finish t)
-	("j" "Journal" entry (file+datetree "z:\\DOCS\\2023\\journal.org")
+	("j" "Journal" entry (file+datetree "~/Documents/2023/journal.org")
 	 "** %^{Heading}")))
 
 ;; org mode agenda customized commands
