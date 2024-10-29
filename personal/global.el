@@ -87,9 +87,13 @@
 (add-hook 'emacs-lisp-mode-hook #'highlight-parentheses-mode)
 
 ;; theme
-(load-theme 'misterioso)
+(load-theme 'tango)
+;;(load-theme 'misterioso)
 ;; (load-theme 'solarized-light t)
 ;; (set-background-color "honeydew")
+(global-display-line-numbers-mode t)
+(setq display-line-numbers-type 'relative)
+;;(display-line-numbers-mode)
 
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'org-mode-hook #'yas-minor-mode)
