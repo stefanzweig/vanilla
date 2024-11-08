@@ -49,18 +49,18 @@
 (key-chord-define-global "gg" 'counsel-git-grep)
 
 ;; helm
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-m") 'helm-M-x)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-h f") 'helm-apropos)
-(global-set-key (kbd "C-h r") 'helm-info-emacs)
-(global-set-key (kbd "C-h C-l") 'helm-locate-library)
-(global-set-key (kbd "C-c f") 'helm-recentf)
+;;(global-set-key (kbd "C-c h") 'helm-command-prefix)
+;;(global-unset-key (kbd "C-x c"))
+;;(global-set-key (kbd "M-x") 'helm-M-x)
+;;(global-set-key (kbd "C-x C-m") 'helm-M-x)
+;;(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+;;(global-set-key (kbd "C-x b") 'helm-mini)
+;;(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+;;(global-set-key (kbd "C-x C-f") 'helm-find-files)
+;;(global-set-key (kbd "C-h f") 'helm-apropos)
+;;(global-set-key (kbd "C-h r") 'helm-info-emacs)
+;;(global-set-key (kbd "C-h C-l") 'helm-locate-library)
+;;(global-set-key (kbd "C-c f") 'helm-recentf)
 
 ;; shell related
 (global-set-key (kbd "C-!") 'shell)
@@ -96,3 +96,9 @@
 (global-set-key (kbd "M-{") 'insert-pair)
 (global-set-key (kbd "M-\"") 'insert-pair)
 (global-set-key (kbd "M-)") 'delete-pair)
+
+;; mc
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
