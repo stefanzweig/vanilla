@@ -39,9 +39,9 @@
 (global-set-key (kbd "C-,") #'crux-duplicate-current-line-or-region)
 
 ;; key-chord
-;; (key-chord-define-global "jj" 'avy-goto-word-1)
-;; (key-chord-define-global "jl" 'avy-goto-line)
-;; (key-chord-define-global "jk" 'avy-goto-char)
+(key-chord-define-global "jj" 'avy-goto-word-1)
+(key-chord-define-global "jl" 'avy-goto-line)
+(key-chord-define-global "jk" 'avy-goto-char)
 (key-chord-define-global "kk" 'execute-extended-command)
 (key-chord-define-global "yy" 'xah-copy-line-or-region)
 (key-chord-define-global "dd" 'xah-cut-line-or-region)
