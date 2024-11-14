@@ -87,6 +87,7 @@
 (global-set-key (kbd "<f6>") 'xah-select-block)
 (global-set-key (kbd "<f7>") 'zweig/default_orgmode_playground)
 (global-set-key (kbd "<f8> <f8>") 'xah-search-current-word)
+(global-set-key (kbd "<f8> f") 'prelude-copy-file-name-to-clipboard)
 
 (global-set-key (kbd "<f8> (") 'xah-insert-paren)
 (global-set-key (kbd "<f8> {") 'xah-insert-brace)
