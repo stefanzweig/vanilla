@@ -99,6 +99,7 @@
 (add-hook 'org-mode-hook #'yas-minor-mode)
 
 (powerline-default-theme)
+(powerline-center-theme)
 
 ;; (exec-path-from-shell-initialize)
 

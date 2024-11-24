@@ -28,6 +28,10 @@
 (personal 'projectile)
 (personal 'init-f2)
 (personal 'zweig)
+(personal 'key-chord)
+(personal 'powerline-themes)
+(personal 'powerline-separators)
+(personal 'powerline)
 ;; (personal 'burly)
 
 ;; elpa managed
@@ -38,11 +42,11 @@
 (package-initialize)
 (when (not package-archive-contents) (package-refresh-contents))
 
-;; (package 'use-package)
+(package 'use-package)
 (package 'magit)
 (package 'expand-region)
-(package 'key-chord)
-(package 'avy)
+;; (package 'key-chord)
+;; (package 'avy)
 (package 'company)
 (package 'ivy)
 (package 'swiper)
@@ -51,7 +55,6 @@
 (package 'paredit)
 ;; (package 'demo-it)
 (package 'yasnippet)
-(package 'powerline)
 (package 'exec-path-from-shell)
 (package 'highlight-parentheses)
 ;; (package 'markdown-mode)
