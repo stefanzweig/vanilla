@@ -217,6 +217,8 @@ Version: 2017-01-17 2021-08-12"
 (defun xah-insert-square-bracket () (interactive) (xah-insert-bracket-pair "[" "]") )
 (defun xah-insert-brace () (interactive) (xah-insert-bracket-pair "{" "}") )
 
+;; move line up down
+;; 2024-11-25 10:12:45
 (defun move-text-internal (arg)
   (cond
    ((and mark-active transient-mark-mode)
@@ -236,12 +238,7 @@ Version: 2017-01-17 2021-08-12"
       (when (or (> arg 0) (not (bobp)))
 	(forward-line)
 	(when (or (< arg 0) (not (eobp)))
-	  (transpose-lines arg)
-	  (when (and (eval-when-compile
-		       '(and (>= emacs-major-version 24)
-			     (>= emacs-minor-version 3)))
-		     (< arg 0))
-	    (forward-line -1)))
+	  (transpose-lines arg))
 	(forward-line -1))
       (move-to-column column t)))))
 
@@ -257,8 +254,8 @@ Version: 2017-01-17 2021-08-12"
   (interactive "*p")
   (move-text-internal (- arg)))
 
-(global-set-key [M-S-up] 'move-text-up)
-(global-set-key [M-S-down] 'move-text-down)
+(global-set-key [S-C-up] 'move-text-up)
+(global-set-key [S-C-down] 'move-text-down)
 
 (provide 'zweig)
 ;;; zweig.el ends here
