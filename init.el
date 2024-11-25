@@ -61,7 +61,7 @@
 ;; (package 'undo-tree)
 (package 'diminish)
 ;; (package 'solarized-theme)
-;; (package 'ivy-posframe)
+(package 'ivy-posframe)
 (package 'hydra)
 ;; (package 'dashboard)
 ;; (package 'simple-httpd)
