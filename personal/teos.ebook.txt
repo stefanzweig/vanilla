@@ -1,5 +1,9 @@
-﻿The Project Gutenberg eBook of The Elements of Style
-    
+﻿;; Local Variables:
+;; eval: (read-only-mode 1)
+;; End:
+
+The Project Gutenberg eBook of The Elements of Style
+
 This ebook is for the use of anyone anywhere in the United States and
 most other parts of the world at no cost and with almost no restrictions
 whatsoever. You may copy it, give it away or re-use it under the terms
@@ -17,9 +21,9 @@ Release date: August 18, 2011 [eBook #37134]
 Language: English
 
 Credits: Produced by Jana Srna and the Online Distributed
-        Proofreading Team at http://www.pgdp.net (This file was
-        produced from images generously made available by The
-        Internet Archive/American Libraries.)
+	Proofreading Team at http://www.pgdp.net (This file was
+	produced from images generously made available by The
+	Internet Archive/American Libraries.)
 
 
 *** START OF THE PROJECT GUTENBERG EBOOK THE ELEMENTS OF STYLE ***
@@ -82,7 +86,7 @@ Internet Archive/American Libraries.)
 CONTENTS
 
 
-                                                                     Page
+								     Page
 
     I. Introductory                                                     5
 
@@ -91,27 +95,27 @@ CONTENTS
        1. Form the possessive singular of nouns by adding _'s_          7
 
        2. In a series of three or more terms with a single
-          conjunction, use a comma after each term except the last      7
+	  conjunction, use a comma after each term except the last      7
 
        3. Enclose parenthetic expressions between commas                8
 
        4. Place a comma before a conjunction introducing a
-          co-ordinate clause                                           10
+	  co-ordinate clause                                           10
 
        5. Do not join independent clauses by a comma                   11
 
        6. Do not break sentences in two                                12
 
        7. A participial phrase at the beginning of a sentence must
-          refer to the grammatical subject                             13
+	  refer to the grammatical subject                             13
 
   III. Elementary Principles of Composition                            15
 
        8. Make the paragraph the unit of composition: one paragraph
-          to each topic                                                15
+	  to each topic                                                15
 
        9. As a rule, begin each paragraph with a topic sentence; end
-          it in conformity with the beginning                          17
+	  it in conformity with the beginning                          17
 
       10. Use the active voice                                         19
 
@@ -2407,7 +2411,7 @@ IV. Point out and correct the faults in the following sentences:
 *** END OF THE PROJECT GUTENBERG EBOOK THE ELEMENTS OF STYLE ***
 
 
-    
+
 
 Updated editions will replace the previous one—the old editions will
 be renamed.
@@ -2512,7 +2516,7 @@ performed, viewed, copied or distributed:
     at www.gutenberg.org. If you
     are not located in the United States, you will have to check the laws
     of the country where you are located before using this eBook.
-  
+
 1.E.2. If an individual Project Gutenberg™ electronic work is
 derived from texts not protected by U.S. copyright law (does not
 contain a notice indicating that it is posted with permission of the
@@ -2563,34 +2567,34 @@ access to or distributing Project Gutenberg™ electronic works
 provided that:
 
     • You pay a royalty fee of 20% of the gross profits you derive from
-        the use of Project Gutenberg™ works calculated using the method
-        you already use to calculate your applicable taxes. The fee is owed
-        to the owner of the Project Gutenberg™ trademark, but he has
-        agreed to donate royalties under this paragraph to the Project
-        Gutenberg Literary Archive Foundation. Royalty payments must be paid
-        within 60 days following each date on which you prepare (or are
-        legally required to prepare) your periodic tax returns. Royalty
-        payments should be clearly marked as such and sent to the Project
-        Gutenberg Literary Archive Foundation at the address specified in
-        Section 4, “Information about donations to the Project Gutenberg
-        Literary Archive Foundation.”
-    
+	the use of Project Gutenberg™ works calculated using the method
+	you already use to calculate your applicable taxes. The fee is owed
+	to the owner of the Project Gutenberg™ trademark, but he has
+	agreed to donate royalties under this paragraph to the Project
+	Gutenberg Literary Archive Foundation. Royalty payments must be paid
+	within 60 days following each date on which you prepare (or are
+	legally required to prepare) your periodic tax returns. Royalty
+	payments should be clearly marked as such and sent to the Project
+	Gutenberg Literary Archive Foundation at the address specified in
+	Section 4, “Information about donations to the Project Gutenberg
+	Literary Archive Foundation.”
+
     • You provide a full refund of any money paid by a user who notifies
-        you in writing (or by e-mail) within 30 days of receipt that s/he
-        does not agree to the terms of the full Project Gutenberg™
-        License. You must require such a user to return or destroy all
-        copies of the works possessed in a physical medium and discontinue
-        all use of and all access to other copies of Project Gutenberg™
-        works.
-    
+	you in writing (or by e-mail) within 30 days of receipt that s/he
+	does not agree to the terms of the full Project Gutenberg™
+	License. You must require such a user to return or destroy all
+	copies of the works possessed in a physical medium and discontinue
+	all use of and all access to other copies of Project Gutenberg™
+	works.
+
     • You provide, in accordance with paragraph 1.F.3, a full refund of
-        any money paid for a work or a replacement copy, if a defect in the
-        electronic work is discovered and reported to you within 90 days of
-        receipt of the work.
-    
+	any money paid for a work or a replacement copy, if a defect in the
+	electronic work is discovered and reported to you within 90 days of
+	receipt of the work.
+
     • You comply with all other terms of this agreement for free
-        distribution of Project Gutenberg™ works.
-    
+	distribution of Project Gutenberg™ works.
+
 
 1.E.9. If you wish to charge a fee or distribute a Project
 Gutenberg™ electronic work or group of works on different terms than
@@ -2753,5 +2757,3 @@ This website includes information about Project Gutenberg™,
 including how to make donations to the Project Gutenberg Literary
 Archive Foundation, how to help produce our new eBooks, and how to
 subscribe to our email newsletter to hear about new eBooks.
-
-
