@@ -37,6 +37,7 @@
 (global-set-key (kbd "C-s") 'swiper)
 ; (global-set-key (kbd "C-,") 'set-mark-command)
 (global-set-key (kbd "C-,") #'crux-duplicate-current-line-or-region)
+(global-set-key (kbd "C-.") #'eval-print-last-sexp)
 
 ;; key-chord
 (key-chord-define-global "jj" 'avy-goto-word-1)
