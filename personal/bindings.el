@@ -37,7 +37,12 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "C-,") #'crux-duplicate-current-line-or-region)
-(global-set-key (kbd "C-m") #'eval-print-last-sexp)
+;;(global-set-key (kbd "C-m") #'eval-print-last-sexp)
+
+(defun my-lisp-interaction-mode-setup ()
+  "Lisp Interaction mode setup"
+  (define-key lisp-interaction-mode-map (kbd "C-m") #'eval-print-last-sexp))
+(add-hook 'lisp-interaction-mode-hook 'my-lisp-interaction-mode-setup)
 
 ;; key-chord
 (key-chord-define-global "jj" 'avy-goto-word-1)
