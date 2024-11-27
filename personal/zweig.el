@@ -257,5 +257,14 @@ Version: 2017-01-17 2021-08-12"
 (global-set-key [S-C-up] 'move-text-up)
 (global-set-key [S-C-down] 'move-text-down)
 
+(defun toggle-relative-ln ()
+  (interactive)
+  (if (and (boundp 'display-line-numbers-mode) display-line-numbers-mode)
+      (display-line-numbers-mode -1)
+    (progn
+      (setq display-line-numbers-type 'relative)
+      (display-line-numbers-mode 1))))
+
+
 (provide 'zweig)
 ;;; zweig.el ends here
