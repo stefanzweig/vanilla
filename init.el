@@ -26,12 +26,12 @@
 (personal 'which-key)
 (personal 'iedit)
 (personal 'projectile)
-(personal 'init-f2)
 (personal 'zweig)
 (personal 'key-chord)
 (personal 'powerline-themes)
 (personal 'powerline-separators)
 (personal 'powerline)
+;;(personal 'init-f2)
 ;; (personal 'burly)
 
 ;; elpa managed
