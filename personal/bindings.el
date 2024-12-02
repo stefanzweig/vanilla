@@ -22,10 +22,10 @@
 
 ;; org
 (global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "<f9> a") 'org-agenda)
-(global-set-key (kbd "<f9> c") 'org-capture)
-(global-set-key (kbd "<f9> m") 'my/yank-more)
-(global-set-key (kbd "<f9> n") 'org-todo-list-current-file)
+(global-set-key (kbd "<f8> a") 'org-agenda)
+(global-set-key (kbd "<f8> c") 'org-capture)
+(global-set-key (kbd "<f8> m") 'my/yank-more)
+(global-set-key (kbd "<f8> n") 'org-todo-list-current-file)
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
