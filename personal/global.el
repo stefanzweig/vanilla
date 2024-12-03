@@ -117,6 +117,6 @@
 (ivy-posframe-mode 1)
 
 (setq hydra-verbatim t)
-(set-frame-width (selected-frame) 140)
-(set-frame-height (selected-frame) 30)
+(set-frame-width (selected-frame) 100)
+(set-frame-height (selected-frame) 20)
 (my/frame-recenter)
