@@ -25,14 +25,15 @@
 (global-set-key (kbd "<f8> a") 'org-agenda)
 (global-set-key (kbd "<f8> c") 'org-capture)
 (global-set-key (kbd "<f8> m") 'my/yank-more)
-(global-set-key (kbd "<f8> n") 'org-todo-list-current-file)
+(global-set-key (kbd "<f8> l") 'org-todo-list-current-file)
+
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
 (global-set-key (kbd "C-k") #'crux-smart-kill-line)
-(global-set-key (kbd "M-p") 'previous-buffer)
-(global-set-key (kbd "M-n") 'next-buffer)
+;; (global-set-key (kbd "M-p") 'previous-buffer)
+;; (global-set-key (kbd "M-n") 'next-buffer)
 (global-set-key (kbd "M-=") 'er/expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-s") 'swiper)
@@ -80,6 +81,8 @@
     ("+" text-scale-increase "in" :column "Zoom")
     ("-" text-scale-decrease "out" :column "Zoom")
     ("g" counsel-git-grep "grep" :column "Utils")
+    ("n" next-buffer "next buffer" :column "Utils")
+    ("p" previous-buffer "previous buffer" :column "Utils")
     ("q" nil "quit" :column "Opts")))
 
 (global-set-key (kbd "<f8> (") 'xah-insert-paren)
