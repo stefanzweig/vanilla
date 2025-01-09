@@ -105,3 +105,13 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; hydra
+
+(defhydra hydra-zoom (global-map "<f5>")
+  "HYDRA"
+  ("g" text-scale-increase "in")
+  ("l" text-scale-decrease "out")
+  ("n" next-buffer "next buffer")
+  ("p" previous-buffer "previous buffer")
+  ("q" quit "quit"))
