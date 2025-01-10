@@ -113,8 +113,7 @@
   ("g" text-scale-increase "in")
   ("l" text-scale-decrease "out")
   ("n" next-buffer "next buffer")
-  ("p" previous-buffer "previous buffer")
-  ("q" quit "quit"))
+  ("p" previous-buffer "previous buffer"))
 
 (defhydra hydra-org-clock (:exit t :color blue :hint nil)
   "
