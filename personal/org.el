@@ -12,7 +12,7 @@
 (setq org-show-notification-handler 'message)
 (setq org-clock-report-include-clocking-task t)
 (org-clock-persistence-insinuate)
-
+(setq org-babel-python-command "python")
 (setq org-log-into-drawer "LOGBOOK")
 (setq org-clock-into-drawer 1)
 
@@ -34,6 +34,7 @@
 			      (shell . t)
 			      (java . t)
 			      (C . t)
+			      (lua . t)
 			      (calc . t)
 			      (dot . t)
 			      (ditaa . t)
@@ -102,3 +103,21 @@
 (setq org-id-track-globally t)
 (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
 (setq org-src-preserve-indentation 4)
+
+(defhydra hydra-org-clock (:exit t :color blue :hint nil)
+  "
+Clock   In/out^     ^Edit^   ^Summary     (_?_)
+-----------------------------------------
+	_i_n         _e_dit   _g_oto entry
+	_c_ontinue   _q_uit   _d_isplay
+	_o_ut        ^ ^      _r_eport
+      "
+  ("i" org-clock-in)
+  ("o" org-clock-out)
+  ("c" org-clock-in-last)
+  ("e" org-clock-modify-effort-estimate)
+  ("q" org-clock-cancel)
+  ("g" org-clock-goto)
+  ("d" org-clock-display)
+  ("r" org-clock-report)
+  ("?" (org-info "Clocking commands")))
