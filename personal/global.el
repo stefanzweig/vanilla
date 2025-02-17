@@ -96,6 +96,7 @@
 ;;(display-line-numbers-mode)
 
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 (add-hook 'org-mode-hook #'yas-minor-mode)
 
 (powerline-default-theme)
