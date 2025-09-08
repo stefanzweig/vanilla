@@ -265,6 +265,43 @@ Version: 2017-01-17 2021-08-12"
       (setq display-line-numbers-type 'relative)
       (display-line-numbers-mode 1))))
 
+;;
+(defun split-region-by-two-chars-safe (beg end)
+  "安全地对选中的区域按每两个字符进行分段。"
+  (interactive (if (use-region-p)
+		   (list (region-beginning) (region-end))
+		 (list (line-beginning-position) (line-end-position))))
+
+  (let ((text (buffer-substring-no-properties beg end))
+	(separator " "))
+    (save-excursion
+      (delete-region beg end)
+      (insert (replace-regexp-in-string "\\(..\\)"
+					(concat "\\1" separator) text)))))
+
+;;
+(defun split-region-by-four-chars-safe (beg end)
+  "安全地对选中的区域按每两个字符进行分段。"
+  (interactive (if (use-region-p)
+		   (list (region-beginning) (region-end))
+		 (list (line-beginning-position) (line-end-position))))
+
+  (let ((text (buffer-substring-no-properties beg end))
+	(separator " "))
+    (save-excursion
+      (delete-region beg end)
+      (insert (replace-regexp-in-string "\\(....\\)"
+					(concat "\\1" separator) text)))))
+
+;;
+(defun convert-selected-hex-to-decimal (beg end)
+  "将选中的十六进制文本转换为十进制。"
+  (interactive "r")
+  (when (use-region-p)
+    (let* ((hex-str (buffer-substring-no-properties beg end))
+	   (decimal (string-to-number hex-str 16)))
+      (delete-region beg end)
+      (insert (number-to-string decimal)))))
 
 (provide 'zweig)
 ;;; zweig.el ends here
