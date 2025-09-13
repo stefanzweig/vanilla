@@ -1,6 +1,6 @@
 (mapc (lambda (tuple)
 	(define-key key-translation-map
-	    (kbd (concat "<f12> " (nth 0 tuple))) ; Keybinding
+	    (kbd (concat "M-<f12> " (nth 0 tuple))) ; Keybinding
 	    (kbd (nth 1 tuple))))                ; Character to insert
       '(("<up>" "↑")
 	("<down>" "↓")
