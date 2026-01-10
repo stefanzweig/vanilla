@@ -28,8 +28,8 @@ If FRAME is omitted or nil, use currently selected frame."
 			 (/ (- monitor-h frame-h) 2))))
       (apply 'set-frame-position (flatten-list (list frame center))))))
 
-(add-hook 'after-init-hook #'my/frame-recenter)
-(add-hook 'after-make-frame-functions #'my/frame-recenter)
+;; (add-hook 'after-init-hook #'my/frame-recenter)
+;; (add-hook 'after-make-frame-functions #'my/frame-recenter)
 
 
 (defun zweig/python_playground ()

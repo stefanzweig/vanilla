@@ -129,4 +129,5 @@
 (setq hydra-verbatim t)
 (set-frame-width (selected-frame) 100)
 (set-frame-height (selected-frame) 20)
-(my/frame-recenter)
+;;(my/frame-recenter)
+(toggle-frame-maximized)
