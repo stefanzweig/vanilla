@@ -94,7 +94,7 @@
 (load-theme 'misterioso)
 ;; (load-theme 'tango)
 ;; (load-theme 'solarized-light t)
-(set-background-color "honeydew")
+;; (set-background-color "honeydew")
 
 (global-display-line-numbers-mode t)
 (setq display-line-numbers-type 'relative)
@@ -130,4 +130,3 @@
 (set-frame-width (selected-frame) 100)
 (set-frame-height (selected-frame) 20)
 (my/frame-recenter)
-(toggle-frame-maximized)
