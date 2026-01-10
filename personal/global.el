@@ -83,12 +83,19 @@
 (autoload 'enable-paredit-mode
   "paredit"
   "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook #'highlight-parentheses-mode)
+(add-hook 'js-mode-hook
+	  (lambda ()
+	    (setq indent-tabs-mode nil)
+	    (setq js-indent-level 2)))
 
 ;; theme
 (load-theme 'misterioso)
 ;; (load-theme 'tango)
 ;; (load-theme 'solarized-light t)
 (set-background-color "honeydew")
+
 (global-display-line-numbers-mode t)
 (setq display-line-numbers-type 'relative)
 
@@ -106,15 +113,7 @@
 (powerline-default-theme)
 (powerline-center-theme)
 
-(exec-path-from-shell-initialize)
-(setq hydra-verbatim t)
-
-;; frame settings
-(set-frame-width (selected-frame) 100)
-(set-frame-height (selected-frame) 20)
-(my/frame-recenter)
-(toggle-frame-maximized)
-
+;; (exec-path-from-shell-initialize)
 ;; (global-undo-tree-mode)
 ;; (diminish 'undo-tree-mode " ☺")
 
@@ -126,3 +125,9 @@
 ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-bottom-left)))
 ;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center)))
 ;; (ivy-posframe-mode 1)
+
+(setq hydra-verbatim t)
+(set-frame-width (selected-frame) 100)
+(set-frame-height (selected-frame) 20)
+(my/frame-recenter)
+(toggle-frame-maximized)
