@@ -85,10 +85,6 @@
   "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
 (add-hook 'emacs-lisp-mode-hook #'highlight-parentheses-mode)
-(add-hook 'js-mode-hook
-	  (lambda ()
-	    (setq indent-tabs-mode nil)
-	    (setq js-indent-level 2)))
 
 ;; theme
 (load-theme 'misterioso)
