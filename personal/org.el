@@ -27,6 +27,17 @@
 (when (version<= "9.2" (org-version))
   (require 'org-tempo))
 
+(setq org-babel-pascal-command "fpc")
+(defun org-babel-execute:pascal (body params)
+  "Execute Pascal code with fpc."
+  (let* ((in-file (org-babel-temp-file "pascal-"))
+	 (out-file (org-babel-temp-file "pascal-"))
+	 (cmd (or (cdr (assq :cmd params)) "fpc"))
+	 (args (concat "-o" out-file " " in-file)))
+    (with-temp-file in-file (insert body))
+    (org-babel-eval (concat cmd " " args) "")
+    (org-babel-eval out-file "")))
+
 (setq org-confirm-babel-evaluate nil)
 (org-babel-do-load-languages
  'org-babel-load-languages   '((python . t)
