@@ -115,6 +115,9 @@
 (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
 (setq org-src-preserve-indentation 4)
 
+;; Ctrl-, not in use
+(add-hook 'org-mode-hook (lambda () (local-unset-key (kbd "C-,"))))
+
 (defhydra hydra-org-clock (:exit t :color blue :hint nil)
   "
 Clock   In/out^     ^Edit^   ^Summary     (_?_)
