@@ -72,6 +72,8 @@
 ;; company-mode
 (global-company-mode 1)
 
+;; winpulse
+(winpulse-mode +1)
 ;; ivy-mode
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)

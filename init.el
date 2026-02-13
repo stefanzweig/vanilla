@@ -31,6 +31,7 @@
 (personal 'powerline-themes)
 (personal 'powerline-separators)
 (personal 'powerline)
+(personal 'winpulse)
 ;;(personal 'init-f2)
 ;; (personal 'burly)
 
