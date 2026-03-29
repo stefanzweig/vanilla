@@ -125,7 +125,8 @@
 ;; (ivy-posframe-mode 1)
 
 (setq hydra-verbatim t)
-(set-frame-width (selected-frame) 100)
-(set-frame-height (selected-frame) 20)
-;;(my/frame-recenter)
-(toggle-frame-maximized)
+;; Only set frame size for GUI, not terminal
+(when (display-graphic-p)
+  (set-frame-width (selected-frame) 100)
+  (set-frame-height (selected-frame) 40)
+  (toggle-frame-maximized))
