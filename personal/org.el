@@ -12,7 +12,7 @@
 (setq org-show-notification-handler 'message)
 (setq org-clock-report-include-clocking-task t)
 (org-clock-persistence-insinuate)
-(setq org-babel-python-command "python")
+(setq org-babel-python-command "python3")
 (setq org-log-into-drawer "LOGBOOK")
 (setq org-clock-into-drawer 1)
 
@@ -66,7 +66,7 @@
 ;; org mode agenda customized commands
 (setq org-agenda-custom-commands
       '(("D" "Daily Action List"
-	 ((agenda "" ((org-agenda-ndays 1)
+	 ((agenda "" ((org-agenda-span 'day)
 		      (org-agenda-sorting-strategy
 		       (quote ((agenda time-up priority-down tag-up))))
 		      (org-deadline-warning-days 0)))))

@@ -83,6 +83,6 @@
 ;; (+my/better-font)
 
 (put 'narrow-to-region 'disabled nil)
-(setq org-babel-python-command "python3")
+;; org-babel-python-command lives in personal/org.el
 ;; (setq initial-major-mode (quote text-mode))
 (setq initial-buffer-choice 'xah-new-empty-buffer)
