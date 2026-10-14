@@ -1,0 +1,22 @@
+# Packages installed by package.el, re-fetched on demand (~18 MB). Never version this.
+/elpa/
+
+# Auto-generated files
+/backups/
+/auto-save-list/
+/eln-cache/
+*.elc
+*.eln
+*~
+\#*\#
+
+# Local state that records machine-specific paths and usage history
+/bookmarks
+/org-clock-save.el
+/.org-id-locations
+
+# Output of the Customize UI; never tracked in this repository's history
+/personal/custom.el
+
+# macOS
+.DS_Store
