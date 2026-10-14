@@ -104,9 +104,9 @@ point and around or after mark are interchanged."
   (interactive)
   (let ((start-positions (rotate-left (mapcar 'window-start (window-list))))
 	(buffers (rotate-left (mapcar 'window-buffer (window-list)))))
-    (mapcar* (lambda (window buffer pos)
-	       (set-window-buffer window buffer)
-	       (set-window-start window pos))
+    (cl-mapcar (lambda (window buffer pos)
+		 (set-window-buffer window buffer)
+		 (set-window-start window pos))
 	     (window-list)
 	     buffers
 	     start-positions)))
@@ -115,11 +115,14 @@ point and around or after mark are interchanged."
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
-  (unwind-protect
-      (progn
-	(linum-mode 1)
-	(goto-line (read-number "Goto line: ")))
-    (linum-mode -1)))
+  (if display-line-numbers-mode
+      ;; Numbers are already visible; don't toggle them off on the way out.
+      (goto-line (read-number "Goto line: "))
+    (unwind-protect
+	(progn
+	  (display-line-numbers-mode 1)
+	  (goto-line (read-number "Goto line: ")))
+      (display-line-numbers-mode -1))))
 
 ;; Borrowed from http://superuser.com/q/603421/8424
 (defun replace-smart-quotes (beg end)
@@ -219,59 +222,6 @@ point and around or after mark are interchanged."
     (if (null (car org-agenda-files))
 	(error "%s is not visiting a file" (buffer-name (current-buffer)))
       (org-todo-list arg))))
-
-(defun now ()
-  (interactive)
-  (insert (current-time-string)))
-
-(defun +my/better-font()
-  (interactive)
-  ;; english font
-  (if (display-graphic-p)
-      (progn
-	(set-face-attribute 'default nil :font (format   "%s:pixelsize=%d" "Sarasa Mono SC Nerd" 16)) ;; 11 13 17 19 23
-	;; chinese font
-	(dolist (charset '(kana han symbol cjk-misc bopomofo))
-	  (set-fontset-font (frame-parameter nil 'font)
-			    charset
-			    (font-spec :family "Sarasa Mono SC Nerd")))) ;; 14 16 20 22 28
-    ))
-
-(defun +my|init-font(frame)
-  (with-selected-frame frame
-    (if (display-graphic-p)
-	(+my/better-font))))
-
-(defun org-todo-list-current-file (&optional arg)
-  "Like `org-todo-list', but using only the current buffer's file."
-  (interactive "P")
-  (let ((org-agenda-files (list (buffer-file-name (current-buffer)))))
-    (if (null (car org-agenda-files))
-	(error "%s is not visiting a file" (buffer-name (current-buffer)))
-      (org-todo-list arg))))
-
- (defun prelude-copy-file-name-to-clipboard ()
-   "Copy the current buffer file name to the clipboard."
-   (interactive)
-   (let ((filename (if (equal major-mode 'dired-mode)
-		       default-directory
-		     (buffer-file-name))))
-     (when filename
-       (kill-new filename)
-       (message "Copied buffer file name '%s' to the clipboard." filename))))
-
- (defun uniquify-region-lines (beg end)
-    "Remove duplicate adjacent lines in region."
-    (interactive "*r")
-    (save-excursion
-      (goto-char beg)
-      (while (re-search-forward "^\\(.*\n\\)\\1+" end t)
-	(replace-match "\\1"))))
-
-(defun uniquify-buffer-lines ()
-  "Remove duplicate adjacent lines in the current buffer."
-  (interactive)
-  (uniquify-region-lines (point-min) (point-max)))
 
 (defun now ()
   (interactive)
