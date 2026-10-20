@@ -101,8 +101,6 @@
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 (add-hook 'org-mode-hook #'yas-minor-mode)
-(add-hook 'emacs-lisp-mode-hook #'enable-paredit-mode)
-(add-hook 'emacs-lisp-mode-hook #'highlight-parentheses-mode)
 (add-hook 'js-mode-hook
 	  (lambda ()
 	    (setq indent-tabs-mode nil)
