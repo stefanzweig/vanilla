@@ -51,6 +51,8 @@
 (package 'orderless)    ; fuzzy matching for vertico
 (package 'corfu)        ; replaces company
 (package 'doom-modeline) ; replaces powerline
+(package 'treesit-auto)  ; auto-install tree-sitter grammars
+;; eglot is built-in for Emacs 29+, no package needed
 (package 'smartparens)
 (package 'paredit)
 ;; (package 'demo-it)
@@ -79,6 +81,8 @@
 (personal 'embark)
 (personal 'corfu)
 (personal 'doom-modeline)
+(personal 'treesit)
+(personal 'eglot)
 (personal 'vanilla-utils)
 (personal 'bindings)
 ;; (personal 'dashboard)
