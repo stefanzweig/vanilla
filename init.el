@@ -28,9 +28,6 @@
 (personal 'projectile)
 (personal 'zweig)
 (personal 'key-chord)
-(personal 'powerline-themes)
-(personal 'powerline-separators)
-(personal 'powerline)
 (personal 'winpulse)
 ;;(personal 'init-f2)
 ;; (personal 'burly)
@@ -38,8 +35,8 @@
 ;; elpa managed
 ;; ------------------
 ;;(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;			 ("org"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-;;			 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+;;			   ("org"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+;;			   ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
 (when (not package-archive-contents) (package-refresh-contents))
 
@@ -48,10 +45,12 @@
 (package 'expand-region)
 ;; (package 'key-chord)
 ;; (package 'avy)
-(package 'company)
-(package 'ivy)
-(package 'swiper)
-(package 'counsel)
+(package 'vertico)      ; replaces ivy
+(package 'consult)      ; replaces swiper + counsel
+(package 'embark)       ; context-sensitive actions
+(package 'orderless)    ; fuzzy matching for vertico
+(package 'corfu)        ; replaces company
+(package 'doom-modeline) ; replaces powerline
 (package 'smartparens)
 (package 'paredit)
 ;; (package 'demo-it)
@@ -62,7 +61,6 @@
 ;; (package 'undo-tree)
 (package 'diminish)
 ;; (package 'solarized-theme)
-(package 'ivy-posframe)
 (package 'hydra)
 ;; (package 'dashboard)
 ;; (package 'simple-httpd)
@@ -76,7 +74,11 @@
 (personal 'fonts)
 ;; (personal 'org-brain)
 (personal 'org)
-(personal 'vanilla-company)
+(personal 'vertico)
+(personal 'consult)
+(personal 'embark)
+(personal 'corfu)
+(personal 'doom-modeline)
 (personal 'vanilla-utils)
 (personal 'bindings)
 ;; (personal 'dashboard)

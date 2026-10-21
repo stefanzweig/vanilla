@@ -36,7 +36,7 @@
 ;; (global-set-key (kbd "M-n") 'next-buffer)
 (global-set-key (kbd "M-=") 'er/expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
-(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "C-s") 'consult-line)
 (global-set-key (kbd "C-,") #'crux-duplicate-current-line-or-region)
 ;;(global-set-key (kbd "C-m") #'eval-print-last-sexp)
 
@@ -47,22 +47,8 @@
 (key-chord-define-global "kk" 'execute-extended-command)
 (key-chord-define-global "yy" 'xah-copy-line-or-region)
 (key-chord-define-global "dd" 'xah-cut-line-or-region)
-(key-chord-define-global "hh" 'swiper-thing-at-point)
-(key-chord-define-global "gg" 'counsel-git-grep)
-
-;; helm
-;;(global-set-key (kbd "C-c h") 'helm-command-prefix)
-;;(global-unset-key (kbd "C-x c"))
-(global-set-key (kbd "M-x") 'helm-M-x)
-;;(global-set-key (kbd "C-x C-m") 'helm-M-x)
-;;(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-;;(global-set-key (kbd "C-x b") 'helm-mini)
-;;(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-;;(global-set-key (kbd "C-x C-f") 'helm-find-files)
-;;(global-set-key (kbd "C-h f") 'helm-apropos)
-;;(global-set-key (kbd "C-h r") 'helm-info-emacs)
-;;(global-set-key (kbd "C-h C-l") 'helm-locate-library)
-;;(global-set-key (kbd "C-c f") 'helm-recentf)
+(key-chord-define-global "hh" 'consult-line)
+(key-chord-define-global "gg" 'consult-git-grep)
 
 ;; shell related
 (global-set-key (kbd "C-!") 'shell)
@@ -80,7 +66,7 @@
     ("h" backward-char "back")
     ("+" text-scale-increase "in" :column "Zoom")
     ("-" text-scale-decrease "out" :column "Zoom")
-    ("g" counsel-git-grep "grep" :column "Utils")
+    ("g" consult-git-grep "grep" :column "Utils")
     ("n" next-buffer "next buffer" :column "Utils")
     ("p" previous-buffer "previous buffer" :column "Utils")
     ("q" nil "quit" :column "Opts")))

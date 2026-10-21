@@ -69,15 +69,8 @@
 ;; key-chord-mode
 (key-chord-mode +1)
 
-;; company-mode
-(global-company-mode 1)
-
 ;; winpulse
 (winpulse-mode +1)
-;; ivy-mode
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
 
 ;; smartparens
 (smartparens-mode +1)
@@ -106,21 +99,9 @@
 	    (setq indent-tabs-mode nil)
 	    (setq js-indent-level 2)))
 
-(powerline-default-theme)
-(powerline-center-theme)
-
 ;; (exec-path-from-shell-initialize)
 ;; (global-undo-tree-mode)
 ;; (diminish 'undo-tree-mode " ☺")
-
-;; display at `ivy-posframe-style'
-;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
-;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
-;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-center)))
-;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-bottom-left)))
-;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-window-bottom-left)))
-;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center)))
-;; (ivy-posframe-mode 1)
 
 (setq hydra-verbatim t)
 ;; Only set frame size for GUI, not terminal
