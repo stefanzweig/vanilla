@@ -1,6 +1,22 @@
 ;; Don't show the startup screen
 (setq inhibit-startup-message t)
 
+;; Don't auto-pop the *Warnings* window on startup.  Most warnings
+;; come from vendored 3rd-party code (projectile/iedit using obsolete
+;; `if-let', etc.) and are harmless.  Raise the display level so only
+;; :emergency warnings pop a buffer; everything else is logged to
+;; *Warnings* silently.  Also prevent `display-buffer' from showing it.
+(setq warning-minimum-level :emergency)
+(setq warning-suppress-log-types '((comp) (bytecomp) (obsolete)))
+(setopt warning-suppress-types '((comp) (bytecomp) (obsolete)))
+;; Hard guard: even if something tries to show *Warnings*, don't pop a
+;; window for it automatically.  You can still switch to it manually
+;; with C-x b *Warnings* if you ever want to inspect them.
+(add-to-list 'display-buffer-alist
+             '("\*Warnings\*"
+               (display-buffer-no-window)
+               (allow-no-window . t)))
+
 ;; toolbar and menu disabled
 ;; (menu-bar-mode -1)
 (tool-bar-mode -1)

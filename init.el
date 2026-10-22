@@ -34,9 +34,14 @@
 
 ;; elpa managed
 ;; ------------------
-;;(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;			   ("org"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-;;			   ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+;; Pin package-user-dir to this repo's elpa/ so Emacs always loads from
+;; (and installs into) the project directory — avoids the HOME-vs-repo
+;; elpa split where some packages live in only one of the two trees.
+(setq package-user-dir (expand-file-name "elpa" vanilla-dir))
+(setq package-archives '(("gnu"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+			 ("nongnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+			 ("org"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+			 ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize)
 (when (not package-archive-contents) (package-refresh-contents))
 
@@ -50,7 +55,9 @@
 (package 'embark)       ; context-sensitive actions
 (package 'orderless)    ; fuzzy matching for vertico
 (package 'corfu)        ; replaces company
-(package 'doom-modeline) ; replaces powerline
+(package 'cape)          ; corfu completion-at-point extensions
+(package 'embark-consult) ; embark + consult integration
+;; (package 'doom-modeline) ; replaces powerline
 (package 'treesit-auto)  ; auto-install tree-sitter grammars
 ;; eglot is built-in for Emacs 29+, no package needed
 (package 'smartparens)
@@ -80,7 +87,7 @@
 (personal 'consult)
 (personal 'embark)
 (personal 'corfu)
-(personal 'doom-modeline)
+;; (personal 'doom-modeline)
 (personal 'treesit)
 (personal 'eglot)
 (personal 'vanilla-utils)
