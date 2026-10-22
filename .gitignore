@@ -15,8 +15,26 @@
 /org-clock-save.el
 /.org-id-locations
 
+# Runtime / session state (auto-generated, machine-specific)
+/.mc-lists.el
+/abbrev_defs
+/emacs_backtrace.txt
+/eshell/
+/history
+/org-persist/
+/places.eld
+/recentf
+/tramp
+/transient/
+/xkcd/
+
 # Output of the Customize UI; never tracked in this repository's history
 /personal/custom.el
+
+# Personal notes / scratch material, not config
+/personal/sudongpo.txt
+/personal/uml.org
+/personal/uml.png
 
 # macOS
 .DS_Store
