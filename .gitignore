@@ -10,11 +10,20 @@
 *~
 \#*\#
 
-# Local state that records machine-specific paths and usage history
+# Local state that records machine-specific paths and usage history.
+# Written at runtime by project.el (/projects), recentf (/recentf), TRAMP
+# (/tramp), transient (/transient/), multiple-cursors (/.mc-lists.el) and the
+# xkcd fetcher (/xkcd/, a json+png download cache).
 /bookmarks
 /org-clock-save.el
 /.org-id-locations
 /history
+/projects
+/recentf
+/tramp
+/transient/
+/.mc-lists.el
+/xkcd/
 
 # Tree-sitter grammars compiled/downloaded by treesit-auto (native binaries)
 /tree-sitter/
