@@ -39,12 +39,17 @@
   :custom
   (consult-narrow-key "<")
   (consult-line-numbers-widen t)
-  (consult-widen-key ">")
-  :config
-  ;; Configure consult-imenu for project support
-  (consult-customize
-   consult-theme :preview-key
-   '(:debounce 0.2 "C-n" "C-p" "<down>" "<up>")))
+  (consult-widen-key ">"))
+
+;; Configure consult-theme preview keys. Must run after consult is
+;; actually loaded — `consult-customize' lives in consult, and in
+;; batch/deferred contexts `:config' can run before the feature is
+;; `require'd, causing a void-function error.
+(with-eval-after-load 'consult
+  (when (fboundp 'consult-customize)
+    (consult-customize
+     consult-theme :preview-key
+     '(:debounce 0.2 "C-n" "C-p" "<down>" "<up>"))))
 
 ;; Optionally configure the register formatting
 (use-package emacs

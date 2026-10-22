@@ -24,9 +24,11 @@
                  (window-parameters (mode-line-format . none)))))
 
 ;; Consult users will also want the embark-consult package.
+;; Defer until both embark and consult are actually loaded — without
+;; :demand, which forces an early require that runs before embark's
+;; variables (e.g. `embark-transformer-alist') are defined.
 (use-package embark-consult
   :after (embark consult)
-  :demand t ; only necessary if you use the lazy load
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
 

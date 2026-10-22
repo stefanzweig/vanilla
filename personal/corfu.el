@@ -23,12 +23,11 @@
   :init
   (global-corfu-mode))
 
-;; Popup completion info
-(use-package corfu-popupinfo
-  :after corfu
-  :hook (corfu-mode . corfu-popupinfo-mode)
+;; Popup completion info (built into corfu 1.0+ as corfu-popupinfo-mode)
+(use-package corfu
   :custom
   (corfu-popupinfo-delay '(0.5 . 0.2))
+  :hook (corfu-mode . corfu-popupinfo-mode)
   :config
   (corfu-popupinfo-mode 1))
 
