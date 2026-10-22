@@ -38,7 +38,7 @@
 ;; (setq visible-bell t)
 
 ;; Make sure all backup files only live in one place
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+(setq backup-directory-alist `(("." . ,(expand-file-name "backups" vanilla-dir))))
 
 ;; Gotta see matching parens
 (show-paren-mode t)

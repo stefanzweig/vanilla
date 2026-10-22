@@ -75,7 +75,7 @@
 (global-set-key (kbd "<f8> <f8>") 'xah-search-current-word)
 (global-set-key (kbd "<f8> [") 'xah-insert-square-bracket)
 (global-set-key (kbd "<f8> f") 'prelude-copy-file-name-to-clipboard)
-(global-set-key (kbd "<f8> g") 'counsel-git-grep)
+(global-set-key (kbd "<f8> g") 'consult-git-grep)
 (global-set-key (kbd "<f8> n") 'zweig/default_orgmode_playground)
 (global-set-key (kbd "<f8> o") 'xah-open-file-at-cursor)
 (global-set-key (kbd "<f8> s") 'xah-select-block)

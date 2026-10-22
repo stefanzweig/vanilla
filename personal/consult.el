@@ -25,7 +25,6 @@
   ("M-g I" . consult-project-imenu)
   ;; M-s bindings in `search-map'
   ("M-s f" . consult-find)
-  ("M-s L" . consult-locate)
   ("M-s g" . consult-grep)
   ("M-s G" . consult-git-grep)
   ("M-s r" . consult-ripgrep)

@@ -4,11 +4,11 @@
 ;; Provides code completion, diagnostics, navigation, refactoring
 
 (use-package eglot
-  :hook ((python-mode . eglot-ensure)
-         (c-mode . eglot-ensure)
-         (c++-mode . eglot-ensure)
-         (js-mode . eglot-ensure)
-         (typescript-mode . eglot-ensure)
+  :hook ((python-ts-mode . eglot-ensure)
+         (c-ts-mode . eglot-ensure)
+         (c++-ts-mode . eglot-ensure)
+         (js-ts-mode . eglot-ensure)
+         (typescript-ts-mode . eglot-ensure)
          (tsx-ts-mode . eglot-ensure))
   :custom
   (eglot-autoshutdown t)  ; shutdown server when last buffer closes
@@ -16,11 +16,11 @@
   :config
   ;; Use corfu for completion
   (add-to-list 'eglot-server-programs
-               '(python-mode . ("pyright-langserver" "--stdio")))
+               '(python-ts-mode . ("pyright-langserver" "--stdio")))
   (add-to-list 'eglot-server-programs
-               '((c-mode c++-mode) . ("clangd")))
+               '((c-ts-mode c++-ts-mode) . ("clangd")))
   (add-to-list 'eglot-server-programs
-               '((js-mode typescript-mode tsx-ts-mode) . ("typescript-language-server" "--stdio")))
+               '((js-ts-mode typescript-ts-mode tsx-ts-mode) . ("typescript-language-server" "--stdio")))
   
   ;; Keybindings
   :bind (:map eglot-mode-map
