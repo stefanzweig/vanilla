@@ -118,3 +118,30 @@ Clock   In/out^     ^Edit^   ^Summary     (_?_)
   ("d" org-clock-display)
   ("r" org-clock-report)
   ("?" (org-info "Clocking commands")))
+
+;; ──────────────────────────────────────────────────────────────────────
+;; tree-sitter (ts-mode) helpers
+;; Active automatically in *-ts-mode buffers.  `C-c t' is the standard
+;; user-reserved prefix, so nothing collides.
+;; ──────────────────────────────────────────────────────────────────────
+(with-eval-after-load 'treesit
+  (when (boundp 'treesit-mode-map)
+    ;; Structural navigation (jump by syntax node, not by regex).
+    (define-key treesit-mode-map (kbd "C-M-a") #'treesit-beginning-of-defun)
+    (define-key treesit-mode-map (kbd "C-M-e") #'treesit-end-of-defun)
+
+    ;; Indent the whole buffer in one shot (works on syntax tree).
+    (define-key treesit-mode-map (kbd "C-c t i")
+                (lambda ()
+                  (interactive)
+                  (indent-region (point-min) (point-max))))
+
+    ;; Live syntax-tree explorer — side window shows the parse tree.
+    ;; Toggle on/off; great for understanding what treesit sees.
+    (define-key treesit-mode-map (kbd "C-c t x") #'treesit-explore-mode)))
+
+;; Folding for ts-mode uses the built-in hs-minor-mode (auto-enabled
+;; in ts-mode).  Standard hs keys work out of the box:
+;;   C-c @ C-h   hide block     C-c @ C-s   show block
+;;   C-c @ C-M-h  hide all       C-c @ C-M-s  show all
+;;   C-c @ C-l   hide leafs     C-c @ C-c   toggle
