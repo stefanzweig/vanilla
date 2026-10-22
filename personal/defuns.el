@@ -5,10 +5,18 @@
   (load (concat vanilla-personal-dir "/" (symbol-name library)) 'noerror))
 
 ;; For loading packages from the Emacs Lisp Package Archive (ELPA)
+;; A failure to install one package (404, network hiccup, ...) must not
+;; abort the whole startup, so the install step is guarded.
 (defun package (package)
-    (when (not (package-installed-p package))
-      (package-install package))
-    (personal package))
+  (when (not (package-installed-p package))
+    (condition-case err
+        (package-install package)
+      (error
+       (display-warning
+        'vanilla (format "Could not install %s: %s" package
+                         (error-message-string err))
+        :warning))))
+  (personal package))
 
 ;; For loading libraries from the vendor directory
 ;; Modified from defunkt's original version to support autoloading.

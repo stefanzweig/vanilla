@@ -14,6 +14,10 @@
 /bookmarks
 /org-clock-save.el
 /.org-id-locations
+/history
+
+# Tree-sitter grammars compiled/downloaded by treesit-auto (native binaries)
+/tree-sitter/
 
 # Output of the Customize UI; never tracked in this repository's history
 /personal/custom.el

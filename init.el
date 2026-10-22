@@ -38,7 +38,26 @@
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")
                          ("melpa"  . "https://melpa.org/packages/")))
 (package-initialize)
-(when (not package-archive-contents) (package-refresh-contents))
+;; The archive cache on disk can go stale: GNU ELPA deletes old tarballs,
+;; so a stale cache makes `package-install' request a 404 and abort
+;; startup.  Refresh when the cache is missing or older than 14 days.
+(let* ((cache (expand-file-name "archives/gnu/archive-contents"
+                                package-user-dir))
+       (stale (or (not package-archive-contents)
+                  (not (file-exists-p cache))
+                  (> (time-to-number-of-days
+                      (time-subtract (current-time)
+                                     (file-attribute-modification-time
+                                      (file-attributes cache))))
+                     14))))
+  (when stale
+    (condition-case err
+        (package-refresh-contents)
+      (error
+       (display-warning 'vanilla
+                        (format "Could not refresh package archives: %s"
+                                (error-message-string err))
+                        :warning)))))
 
 (package 'use-package)
 (package 'magit)
@@ -48,8 +67,10 @@
 (package 'vertico)      ; replaces ivy
 (package 'consult)      ; replaces swiper + counsel
 (package 'embark)       ; context-sensitive actions
+(package 'embark-consult) ; consult integration for embark
 (package 'orderless)    ; fuzzy matching for vertico
 (package 'corfu)        ; replaces company
+(package 'cape)         ; completion-at-point backends for corfu
 (package 'doom-modeline) ; replaces powerline
 (package 'treesit-auto)  ; auto-install tree-sitter grammars
 ;; eglot is built-in for Emacs 29+, no package needed
