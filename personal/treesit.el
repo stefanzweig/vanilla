@@ -20,5 +20,5 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
-(provide 'treesit)
+(provide 'vanilla-treesit)
 ;;; treesit.el ends here

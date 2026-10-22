@@ -52,5 +52,5 @@
   ("C-x r p" . consult-register-load)
   ("C-x r w" . consult-register-store))
 
-(provide 'consult)
+(provide 'vanilla-consult)
 ;;; consult.el ends here

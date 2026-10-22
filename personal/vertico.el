@@ -37,5 +37,5 @@
   ;; Enable recursive minibuffers
   (setq enable-recursive-minibuffers t))
 
-(provide 'vertico)
+(provide 'vanilla-vertico)
 ;;; vertico.el ends here

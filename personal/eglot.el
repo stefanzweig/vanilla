@@ -31,5 +31,5 @@
               ("C-c l R" . eglot-find-references)
               ("C-c l h" . eldoc)))
 
-(provide 'eglot)
+(provide 'vanilla-eglot)
 ;;; eglot.el ends here

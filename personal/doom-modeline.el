@@ -30,5 +30,5 @@
   (doom-modeline-env-version t)
   (doom-modeline-python-executable "python3"))
 
-(provide 'doom-modeline)
+(provide 'vanilla-doom-modeline)
 ;;; doom-modeline.el ends here

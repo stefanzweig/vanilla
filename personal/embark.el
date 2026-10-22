@@ -30,5 +30,5 @@
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
 
-(provide 'embark)
+(provide 'vanilla-embark)
 ;;; embark.el ends here

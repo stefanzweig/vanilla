@@ -34,9 +34,9 @@
 
 ;; elpa managed
 ;; ------------------
-;;(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;			   ("org"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-;;			   ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+(setq package-archives '(("gnu"    . "https://elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                         ("melpa"  . "https://melpa.org/packages/")))
 (package-initialize)
 (when (not package-archive-contents) (package-refresh-contents))
 
