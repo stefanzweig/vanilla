@@ -19,8 +19,28 @@
                '(python-ts-mode . ("pyright-langserver" "--stdio")))
   (add-to-list 'eglot-server-programs
                '((c-ts-mode c++-ts-mode) . ("clangd")))
-  (add-to-list 'eglot-server-programs
-               '((js-ts-mode typescript-ts-mode tsx-ts-mode) . ("typescript-language-server" "--stdio")))
+
+  ;; TypeScript: typescript-language-server does NOT search the global npm
+  ;; prefix -- it only looks at the workspace's node_modules/typescript or an
+  ;; explicit tsserver path.  TypeScript 7+ (the Go port) ships no tsserver.js
+  ;; at all, so we pin a TS 5.x install and expose it as `fallbackPath'.
+  ;; fallbackPath (not path) is checked *after* the workspace version, so a
+  ;; project's own TypeScript still takes priority.
+  (let ((ts-server "typescript-language-server")
+        (ts-tsserver "~/.local/share/eglot-typescript/node_modules/typescript/lib/tsserver.js"))
+    (setq eglot-server-programs
+          (cons `((js-ts-mode typescript-ts-mode tsx-ts-mode)
+                  ,ts-server "--stdio"
+                  :initializationOptions
+                  ( :tsserver (:fallbackPath ,(expand-file-name ts-tsserver))
+                    :maxTsServerMemory 3072))
+                ;; drop any pre-existing TypeScript entry so we stay idempotent
+                (seq-remove
+                 (lambda (entry)
+                   (let ((modes (car entry)))
+                     (or (eq modes 'typescript-ts-mode)
+                         (and (listp modes) (memq 'typescript-ts-mode modes)))))
+                 eglot-server-programs))))
   
   ;; Keybindings
   :bind (:map eglot-mode-map
