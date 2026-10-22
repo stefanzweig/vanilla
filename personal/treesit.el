@@ -5,7 +5,13 @@
 
 (use-package treesit
   :mode (("\\.tsx\\'" . tsx-ts-mode)
-         ("\\.ts\\'" . typescript-ts-mode))
+         ("\\.ts\\'" . typescript-ts-mode)
+         ("\\.py\\'" . python-ts-mode)
+         ("\\.c\\'" . c-ts-mode)
+         ("\\.h\\'" . c-ts-mode)
+         ("\\.cpp\\'" . c++-ts-mode)
+         ("\\.hpp\\'" . c++-ts-mode)
+         ("\\.cc\\'" . c++-ts-mode))
   :custom
   (treesit-font-lock-level 4)  ; maximum syntax highlighting
   :config
