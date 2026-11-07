@@ -15,7 +15,7 @@ Target: Emacs 30.2 (native-comp). Entry point: `init.el`. Verified to load clean
 - `init.el` - Main entry point that loads personal configurations and ELPA packages
 - `personal/` - Personal configuration modules (loaded via `(personal 'module-name)`); also
   holds bundled third-party libraries (dash, s, f, projectile, which-key, iedit, crux,
-  org-brain, key-chord, xah-fly-keys)
+  org-brain, key-chord)
 - `elpa/` - ELPA package directory (git-ignored, re-fetchable)
 - `backups/`, `auto-save-list/`, `tree-sitter/` - Runtime state (git-ignored)
 - `vendor/` - Referenced by `(vendor 'library)` but **does not exist**; third-party libraries
@@ -48,7 +48,7 @@ Core modules loaded in `init.el` (in order):
 - `treesit` / `eglot` - Tree-sitter grammars and LSP
 - `bindings` - Global keybindings
 
-Note: `personal/vanilla-company.el` and `personal/xah-fly-keys.el` exist but are **not loaded**.
+The `xah-*` commands bound in `bindings.el` are defined in `vanilla-utils.el` and `zweig.el`.
 
 ### ELPA Packages
 
@@ -62,8 +62,10 @@ Managed in `init.el`:
 exists. A missing line means the bindings in `bindings.el` point at void functions - this is how
 the `jj`/`jl`/`jk` chords were broken until avy was added.
 
-Stale entries still in `elpa/` but no longer declared: ivy, swiper, counsel, ivy-posframe,
-helm, helm-core, company, posframe, wfnames, llama, cond-let, shrink-path.
+`multiple-cursors` has no `(package ...)` line and must not be pruned: `personal/iedit.el`
+requires `multiple-cursors-core`, and the `mc/*` bindings resolve through its autoloads.
+`llama` / `cond-let` / `with-editor` / `transient` / `magit-section` are magit dependencies;
+`compat` / `nerd-icons` / `shrink-path` / `lv` belong to the completion and mode-line packages.
 
 ## Fonts
 
