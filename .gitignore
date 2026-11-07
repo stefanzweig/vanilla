@@ -10,6 +10,9 @@
 *~
 \#*\#
 
+# Emacs lock symlinks (.#file), created while a buffer visits the file
+.#*
+
 # Local state that records machine-specific paths and usage history.
 # Written at runtime by project.el (/projects), recentf (/recentf), TRAMP
 # (/tramp), transient (/transient/), multiple-cursors (/.mc-lists.el) and the
