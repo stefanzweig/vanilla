@@ -40,7 +40,7 @@ Core modules loaded in `init.el` (in order):
 - `zweig` / `vanilla-utils` - Personal utility functions
 - `key-chord` - Two-key chord bindings (jj, jl, jk, kk, etc.)
 - `winpulse` - Window focus flash animation
-- `global` - Global settings (theme, modes, hooks)
+- `global` - Global settings (theme, recentf, modes, hooks)
 - `fonts` - GUI font configuration (see Fonts below)
 - `org` - Org mode configuration
 - `vertico` / `consult` / `embark` / `corfu` - Completion stack
@@ -53,9 +53,14 @@ Note: `personal/vanilla-company.el` and `personal/xah-fly-keys.el` exist but are
 ### ELPA Packages
 
 Managed in `init.el`:
-- magit, expand-region, smartparens, paredit, yasnippet, hydra
+- magit, avy, expand-region, smartparens, paredit, yasnippet, hydra
 - vertico, consult, embark, embark-consult, orderless, corfu, cape
 - doom-modeline, treesit-auto, exec-path-from-shell, highlight-parentheses, diminish
+
+`(package 'pkg)` only *installs*; the load happens through the autoloads written by
+`package-initialize`, so a package needs a `(package 'pkg)` line even when no `personal/pkg.el`
+exists. A missing line means the bindings in `bindings.el` point at void functions - this is how
+the `jj`/`jl`/`jk` chords were broken until avy was added.
 
 Stale entries still in `elpa/` but no longer declared: ivy, swiper, counsel, ivy-posframe,
 helm, helm-core, company, posframe, wfnames, llama, cond-let, shrink-path.
@@ -118,19 +123,25 @@ realigning in Emacs cannot fix a broken table. Check the rendering:
 - `F8 s` - Select block
 
 ### Key Chords (jj, jl, jk, kk, etc.)
+- `jj` - Avy goto word
+- `jl` - Avy goto line
+- `jk` - Avy goto char
 - `kk` - Execute extended command
 - `yy` - Copy line/region
 - `dd` - Cut line/region
 - `hh` - Consult line
 - `gg` - Consult git grep
-- `jj` / `jl` / `jk` - **Broken**: bound to `avy-goto-word-1` / `avy-goto-line` /
-  `avy-goto-char`, but avy is not installed
+
+Chords only fire while `key-chord-mode` is on; it is enabled in `global.el`, and the chord
+lookups live in `global-map` under the `key-chord` pseudo-event.
 
 ### Multiple Cursors
 - `C-S-c C-S-c` - Edit lines
 - `C->` / `C-<` - Mark next/previous like this
 - `C-c C-<` - Mark all like this
-- **Broken**: `multiple-cursors` is in `elpa/` but never loaded in `init.el`
+
+`multiple-cursors` has no `(package ...)` line and still works: the bindings resolve through
+its autoloads, which load the package on first use.
 
 ### Shell
 - `C-!` - Shell
