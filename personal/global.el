@@ -90,6 +90,17 @@
 (global-display-line-numbers-mode t)
 (setq display-line-numbers-type 'relative)
 
+;; recentf
+;; `rof' (defuns.el) and `crux-recentf-find-file' both read `recentf-list';
+;; without the mode that list stays empty and both look broken.
+(require 'recentf)
+(setq recentf-max-saved-items 200)
+(dolist (dir '("elpa" "backups" "eln-cache" "tree-sitter"))
+  (add-to-list 'recentf-exclude
+               (concat (regexp-quote (expand-file-name dir user-emacs-directory))
+                       "/")))
+(recentf-mode +1)
+
 ;; prog-mode-hooks
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)

@@ -175,7 +175,8 @@ point and around or after mark are interchanged."
 
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'lml 'list-matching-lines)
-(defalias 'lmlw 'list-matching-lines2)
+;; `lmlw' used to alias `list-matching-lines2' -- a function no Emacs has ever
+;; shipped, so every invocation was a void-function error.  Dropped.
 (defalias 'dml 'delete-matching-lines)
 (defalias 'dnml 'delete-non-matching-lines)
 (defalias 'dtw 'delete-trailing-whitespace)
@@ -189,10 +190,12 @@ point and around or after mark are interchanged."
 
 (defalias 'rb 'revert-buffer)
 (defalias 'sh 'shell)
-(defalias 'ps 'powershell)
+;; `ps' used to alias `powershell'.  PowerShell is not installed on this
+;; machine (no `pwsh'), and `powershell' is not preloaded either, so the alias
+;; only produced void-function errors.  Dropped.
 (defalias 'fb 'flyspell-buffer)
 (defalias 'sbc 'set-background-color)
-(defalias 'rof 'recentf-open-files)
+(defalias 'rof 'recentf-open-files)     ; recentf-mode is enabled in global.el
 (defalias 'lcd 'list-colors-display)
 (defalias 'cc 'calc)
 

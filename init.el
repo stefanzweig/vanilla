@@ -63,7 +63,7 @@
 (package 'magit)
 (package 'expand-region)
 ;; (package 'key-chord)
-;; (package 'avy)
+(package 'avy)          ; goto-char/line/word, used by the jj/jl/jk chords
 (package 'vertico)      ; replaces ivy
 (package 'consult)      ; replaces swiper + counsel
 (package 'embark)       ; context-sensitive actions
