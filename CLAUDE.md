@@ -6,47 +6,81 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is "Vanilla Emacs" - a minimal, personally-configured Emacs setup. It uses a modular architecture where configuration is split into separate files under `personal/`.
 
+Target: Emacs 30.2 (native-comp). Entry point: `init.el`. Verified to load cleanly with
+`emacs -Q --batch -l ~/.emacs.d/init.el`.
+
 ## Architecture
 
 ### Directory Structure
 - `init.el` - Main entry point that loads personal configurations and ELPA packages
-- `personal/` - Personal configuration modules (loaded via `(personal 'module-name)`)
-- `vendor/` - External libraries (submodule-managed, currently empty)
-- `elpa/` - ELPA package directory
-- `backups/` - Backup files
+- `personal/` - Personal configuration modules (loaded via `(personal 'module-name)`); also
+  holds bundled third-party libraries (dash, s, f, projectile, which-key, iedit, crux,
+  org-brain, key-chord, xah-fly-keys)
+- `elpa/` - ELPA package directory (git-ignored, re-fetchable)
+- `backups/`, `auto-save-list/`, `tree-sitter/` - Runtime state (git-ignored)
+- `vendor/` - Referenced by `(vendor 'library)` but **does not exist**; third-party libraries
+  currently live in `personal/` instead
 
 ### Loading Mechanism
 
 The `defuns.el` file defines helper functions:
 - `(personal 'library)` - Loads `personal/library.el`
 - `(package 'pkg)` - Installs and loads an ELPA package
-- `(vendor 'library)` - Loads from vendor directory
+- `(vendor 'library)` - Loads from vendor directory (defined but unused)
 
 ### Configuration Modules
 
-Core modules loaded in `init.el`:
+Core modules loaded in `init.el` (in order):
 - `crux` - Collection of useful commands (kill-line, duplicate-line, etc.)
-- `org` / `org-bullets` - Org mode with UTF-8 bullets
+- `org-bullets` - UTF-8 bullets in Org mode
+- `infrastructure` - Loads the bundled third-party libraries (dash, s, f)
 - `which-key` - Display available keybindings in popup
 - `iedit` - Edit multiple regions simultaneously
 - `projectile` - Project navigation
+- `zweig` / `vanilla-utils` - Personal utility functions
 - `key-chord` - Two-key chord bindings (jj, jl, jk, kk, etc.)
-- `powerline` - Custom mode-line theme
 - `winpulse` - Window focus flash animation
-- `zweig` - Personal utility functions
-- `global` - Global settings (themes, modes, hooks)
+- `global` - Global settings (theme, modes, hooks)
+- `fonts` - GUI font configuration (see Fonts below)
+- `org` - Org mode configuration
+- `vertico` / `consult` / `embark` / `corfu` - Completion stack
+- `doom-modeline` - Mode line (replaced powerline)
+- `treesit` / `eglot` - Tree-sitter grammars and LSP
 - `bindings` - Global keybindings
-- `fonts` - Font configuration
-- `vanilla-company` - Company mode settings
-- `vanilla-utils` - Utility functions
+
+Note: `personal/vanilla-company.el` and `personal/xah-fly-keys.el` exist but are **not loaded**.
 
 ### ELPA Packages
 
 Managed in `init.el`:
-- magit, expand-region, company, ivy, swiper, counsel
-- smartparens, paredit, yasnippet
-- exec-path-from-shell, highlight-parentheses, diminish
-- ivy-posframe, hydra
+- magit, expand-region, smartparens, paredit, yasnippet, hydra
+- vertico, consult, embark, embark-consult, orderless, corfu, cape
+- doom-modeline, treesit-auto, exec-path-from-shell, highlight-parentheses, diminish
+
+Stale entries still in `elpa/` but no longer declared: ivy, swiper, counsel, ivy-posframe,
+helm, helm-core, company, posframe, wfnames, llama, cond-let, shrink-path.
+
+## Fonts
+
+`personal/fonts.el` is fussy about advance widths on purpose. Emacs gives a CJK character two
+Latin columns, so org tables only line up when a han glyph is drawn exactly twice as wide as a
+space. **Only 0.5 em families are allowed in `my/gui-fonts`** - a 0.6 em font (Fira Code,
+JetBrains Mono) allocates 1.2 em per han but the CJK glyph still draws 1.0 em, and every `|` in
+an org table drifts right.
+
+- Candidates: `Sarasa Mono SC`, then `Iosevka` (both 0.5 em), height 160, GUI frames only
+- `han` / `cjk-misc` / `bopomofo` / `kana` are pinned to the same family, so CJK never silently
+  falls back to PingFang
+- `#xe000-#xf8ff` falls back to `Symbols Nerd Font` for doom-modeline/powerline glyphs
+- Installed weights in `~/Library/Fonts`: Regular, Bold, Italic, BoldItalic (the extra weights
+  were removed to save disk space; `light` / `semi-bold` now resolve to Regular)
+
+The file itself is always correct - `org-table-align` counts two columns per han character - so
+realigning in Emacs cannot fix a broken table. Check the rendering:
+
+```elisp
+(string-pixel-width "中")        ; must equal 2 x (string-pixel-width " ")
+```
 
 ## Key Bindings
 
@@ -56,6 +90,7 @@ Managed in `init.el`:
 - `M-3` - Split window horizontally
 - `M-0` - Delete window
 - `M-o` - Other window
+- `C-x 0/1/2/3/o` - Deliberately unbound (to help unlearn them)
 
 ### Org Mode
 - `C-c a` / `F8 a` - Org agenda
@@ -69,42 +104,45 @@ Managed in `init.el`:
 
 ### Editing
 - `C-=` / `M-=` - Expand region
-- `C-s` - Swiper (search)
+- `C-s` - Consult line (search)
+- `C-k` - Crux smart kill line
 - `C-,` - Duplicate line/region
+- `C-t` - Hydra utils (movement, zoom, buffers)
 - `M-[`, `M-{`, `M-"` - Insert pair
 - `M-)` - Delete pair
 - `F5` - Hydra zoom menu
 - `F8 (` / `[` / `{` - Insert brackets
 - `F8 f` - Copy file name to clipboard
-- `F8 g` - Git grep
+- `F8 g` - Consult git grep
 - `F8 o` - Open file at cursor
 - `F8 s` - Select block
 
 ### Key Chords (jj, jl, jk, kk, etc.)
-- `jj` - Avy goto word
-- `jl` - Avy goto line
-- `jk` - Avy goto char
 - `kk` - Execute extended command
 - `yy` - Copy line/region
 - `dd` - Cut line/region
-- `hh` - Swiper thing at point
-- `gg` - Counsel git grep
+- `hh` - Consult line
+- `gg` - Consult git grep
+- `jj` / `jl` / `jk` - **Broken**: bound to `avy-goto-word-1` / `avy-goto-line` /
+  `avy-goto-char`, but avy is not installed
 
 ### Multiple Cursors
 - `C-S-c C-S-c` - Edit lines
 - `C->` / `C-<` - Mark next/previous like this
 - `C-c C-<` - Mark all like this
+- **Broken**: `multiple-cursors` is in `elpa/` but never loaded in `init.el`
 
 ### Shell
 - `C-!` - Shell
 
 ## Org Mode Configuration
 
-- Agenda files: `~/Documents/orgfiles`
+- Agenda files: `~/Documents/orgfiles` (**this directory does not exist yet**, so agenda and
+  capture are effectively empty)
 - TODO keywords: `TODO`, `NEXT` | `DONE`; `WAIT`, `APPT` | `CNCL`, `DFRD`
 - Clock tracking enabled with persistence
-- Babel languages: Python, Emacs Lisp, Shell, Java, C, Lua, Calc, Dot, Ditaa, PlantUML
-- Custom agenda commands: "D" (Daily), "P" (By priority)
+- Babel languages: Python (`python3`), Emacs Lisp, Shell, Java, C, Lua, Calc, Dot, Ditaa, PlantUML
+- Custom agenda commands: "D" (Daily, `org-agenda-span` = `day`), "P" (By priority)
 
 ## Coding Style
 
@@ -126,6 +164,6 @@ Managed in `init.el`:
 ## Themes
 
 - Active theme: `misterioso`
-- Font: Iosevka (height 220)
-- Powerline: default theme with center layout
+- Font: Sarasa Mono SC, height 160 (GUI only; falls back to Iosevka)
+- Mode line: doom-modeline with icons, height 25
 - Relative line numbers enabled
