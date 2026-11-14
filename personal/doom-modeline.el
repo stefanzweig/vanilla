@@ -7,6 +7,7 @@
   :init
   (doom-modeline-mode 1)
   :custom
+  (nerd-icons-font-family "FiraCode Nerd Font")
   (doom-modeline-height 25)
   (doom-modeline-bar-width 3)
   (doom-modeline-icon t)

@@ -27,8 +27,8 @@
   "Preferred GUI fonts, first installed one wins.
 Both have a 0.5 em advance, which is what keeps CJK at exactly two columns.")
 
-(defconst my/nerd-icon-font "Symbols Nerd Font"
-  "Fallback for the private use glyphs used by powerline separators.")
+(defconst my/nerd-icon-font "FiraCode Nerd Font"
+  "Fallback for the private use glyphs used by doom-modeline / nerd-icons.")
 
 ;; Only set custom font for GUI, terminal uses system font
 (when (display-graphic-p)
@@ -44,7 +44,7 @@ Both have a 0.5 em advance, which is what keeps CJK at exactly two columns.")
         ;; that the Latin side changed width, so the 2:1 invariant is lost.
         (dolist (charset '(han cjk-misc bopomofo kana))
           (set-fontset-font t charset (font-spec :family family)))
-        ;; Sarasa is not Nerd-patched: keep the powerline separators working.
+        ;; Sarasa is not Nerd-patched: keep the doom-modeline icons working.
         (when (find-font (font-spec :family my/nerd-icon-font))
           (set-fontset-font t '(#xe000 . #xf8ff)
                             (font-spec :family my/nerd-icon-font) nil 'append))))))
