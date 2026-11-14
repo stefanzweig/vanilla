@@ -75,12 +75,12 @@ space. **Only 0.5 em families are allowed in `my/gui-fonts`** - a 0.6 em font (F
 JetBrains Mono) allocates 1.2 em per han but the CJK glyph still draws 1.0 em, and every `|` in
 an org table drifts right.
 
-- Candidates: `Sarasa Mono SC`, then `Iosevka` (both 0.5 em), height 160, GUI frames only
+- Candidates: `Sarasa Mono SC`, then `Iosevka` (both 0.5 em), height 200, GUI frames only
 - `han` / `cjk-misc` / `bopomofo` / `kana` are pinned to the same family, so CJK never silently
   falls back to PingFang
 - `#xe000-#xf8ff` falls back to `Symbols Nerd Font` for doom-modeline/powerline glyphs
-- Installed weights in `~/Library/Fonts`: Regular, Bold, Italic, BoldItalic (the extra weights
-  were removed to save disk space; `light` / `semi-bold` now resolve to Regular)
+- Installed weights in `~/.local/share/fonts/`: Regular, Bold, Italic, BoldItalic (only the
+  essential 4 weights kept to save disk space; `light` / `semi-bold` resolve to Regular)
 
 The file itself is always correct - `org-table-align` counts two columns per han character - so
 realigning in Emacs cannot fix a broken table. Check the rendering:
@@ -177,6 +177,6 @@ its autoloads, which load the package on first use.
 ## Themes
 
 - Active theme: `misterioso`
-- Font: Sarasa Mono SC, height 160 (GUI only; falls back to Iosevka)
+- Font: Sarasa Mono SC, height 200 (GUI only; falls back to Iosevka)
 - Mode line: doom-modeline with icons, height 25
 - Relative line numbers enabled

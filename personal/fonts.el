@@ -22,8 +22,8 @@
 ;; realigning in Emacs cannot fix it.
 
 (defconst my/gui-fonts
-  '(("Sarasa Mono SC" . 160)   ; Iosevka-based Latin + Source Han CJK, 2:1
-    ("Iosevka"        . 160))  ; 2:1 with any 1.0 em CJK font
+  '(("Sarasa Mono SC" . 200)   ; Iosevka-based Latin + Source Han CJK, 2:1
+    ("Iosevka"        . 200))  ; 2:1 with any 1.0 em CJK font
   "Preferred GUI fonts, first installed one wins.
 Both have a 0.5 em advance, which is what keeps CJK at exactly two columns.")
 

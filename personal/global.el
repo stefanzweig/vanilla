@@ -1,6 +1,11 @@
 ;; Don't show the startup screen
 (setq inhibit-startup-message t)
 
+;; Suppress warning popups — log to *Warnings* but don't pop up a window
+(setq warning-minimum-level :emergency)
+(add-to-list 'display-buffer-alist
+             '("\\`\\*Warnings\\*\\'" display-buffer-no-window))
+
 ;; toolbar and menu disabled
 ;; (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -117,6 +122,8 @@
 (setq hydra-verbatim t)
 ;; Only set frame size for GUI, not terminal
 (when (display-graphic-p)
-  (set-frame-width (selected-frame) 100)
-  (set-frame-height (selected-frame) 40)
+  ;; 2560x1600 @ 96 DPI, height 200 → ~13.3px/col, ~26.7px/row
+  ;; 140 cols × 42 rows ≈ 1867×1121 px, centered with room for window chrome
+  (set-frame-width (selected-frame) 140)
+  (set-frame-height (selected-frame) 42)
   (toggle-frame-maximized))
