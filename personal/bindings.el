@@ -81,7 +81,10 @@
 (global-set-key (kbd "<f8> s") 'xah-select-block)
 (global-set-key (kbd "<f8> {") 'xah-insert-brace)
 
-(global-set-key (kbd "M-[") 'insert-pair)
+;; NOTE: M-[ is NOT bound because ESC [ is the CSI prefix used by ALL
+;; terminal escape sequences (focus-in \e[I, bracketed paste \e[200~,
+;; arrow keys, etc).  Binding M-[ globally causes \e[I to leak as
+;; literal "[I]" characters in emacs -nw.  Use F8 [ instead.
 (global-set-key (kbd "M-{") 'insert-pair)
 (global-set-key (kbd "M-\"") 'insert-pair)
 (global-set-key (kbd "M-)") 'delete-pair)
